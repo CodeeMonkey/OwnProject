@@ -912,149 +912,351 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="229" parent="5" name="ingredient"/>
-    <table id="230" parent="5" name="ingredient_recipe"/>
-    <table id="231" parent="5" name="person"/>
-    <table id="232" parent="5" name="recipe"/>
-    <table id="233" parent="5" name="recipe_ingredient"/>
-    <column id="234" parent="229" name="id">
+    <table id="229" parent="5" name="aircraft"/>
+    <table id="230" parent="5" name="airline"/>
+    <table id="231" parent="5" name="airport"/>
+    <table id="232" parent="5" name="bookedflight"/>
+    <table id="233" parent="5" name="discount"/>
+    <table id="234" parent="5" name="person"/>
+    <table id="235" parent="5" name="shedule"/>
+    <table id="236" parent="5" name="traveler"/>
+    <table id="237" parent="5" name="user"/>
+    <column id="238" parent="229" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="229" name="name">
+    <column id="239" parent="229" name="code">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="236" parent="229" name="PRIMARY">
+    <column id="240" parent="229" name="name">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="241" parent="229" name="nrFirstClassSeats">
+      <Position>4</Position>
+      <DataType>int(10) unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="242" parent="229" name="nrEconomyClassSeats">
+      <Position>5</Position>
+      <DataType>int(10) unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="243" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="237" parent="230" name="Ingredient_id">
+    <column id="244" parent="230" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="230" name="recipes_id">
+    <column id="245" parent="230" name="type">
       <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="246" parent="230" name="name">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="247" parent="230" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="248" parent="231" name="id">
+      <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="239" parent="230" name="FKlbedgnr766hgq29tv3audjhyg">
-      <ColNames>Ingredient_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="240" parent="230" name="FK3uotdcn56dwv61oai7fu3edvd">
-      <ColNames>recipes_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <foreign-key id="241" parent="230" name="FKlbedgnr766hgq29tv3audjhyg">
-      <ColNames>Ingredient_id</ColNames>
+    <column id="249" parent="231" name="code">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="250" parent="231" name="name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="231" name="cityCode">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="231" name="cityName">
+      <Position>5</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="253" parent="231" name="countryCode">
+      <Position>6</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="231" name="countryName">
+      <Position>7</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="255" parent="231" name="globalRegionLocation">
+      <Position>8</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="256" parent="231" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="257" parent="232" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="258" parent="232" name="pricePaid">
+      <Position>2</Position>
+      <DataType>double unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="259" parent="232" name="cancelled">
+      <Position>3</Position>
+      <DataType>tinyint(4)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="260" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="261" parent="232" name="travelerId">
+      <ColNames>id</ColNames>
       <RefSchemaName>realdolmen</RefSchemaName>
-      <RefTableName>ingredient</RefTableName>
+      <RefTableName>traveler</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="242" parent="230" name="FK3uotdcn56dwv61oai7fu3edvd">
-      <ColNames>recipes_id</ColNames>
+    <column id="262" parent="233" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="263" parent="233" name="discountPercentage">
+      <Position>2</Position>
+      <DataType>int(10) unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="264" parent="233" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="265" parent="233" name="airlineId">
+      <ColNames>id</ColNames>
       <RefSchemaName>realdolmen</RefSchemaName>
-      <RefTableName>recipe</RefTableName>
+      <RefTableName>airline</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="243" parent="231" name="id">
+    <foreign-key id="266" parent="233" name="sheduleId">
+      <ColNames>id</ColNames>
+      <RefSchemaName>realdolmen</RefSchemaName>
+      <RefTableName>shedule</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="267" parent="234" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="231" name="birthDate">
+    <column id="268" parent="234" name="birthDate">
       <Position>2</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="231" name="firstName">
+    <column id="269" parent="234" name="firstName">
       <Position>3</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="231" name="lastName">
+    <column id="270" parent="234" name="lastName">
       <Position>4</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="231" name="version">
+    <column id="271" parent="234" name="version">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="248" parent="231" name="PRIMARY">
+    <key id="272" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="249" parent="232" name="id">
+    <column id="273" parent="235" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="232" name="TimeRequired">
+    <column id="274" parent="235" name="defaultPrice">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>double unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="232" name="recipeName">
+    <column id="275" parent="235" name="remainingSeats">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(10) unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="252" parent="232" name="PRIMARY">
+    <column id="276" parent="235" name="date">
+      <Position>4</Position>
+      <DataType>decimal(20) unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="235" name="departureTime">
+      <Position>5</Position>
+      <DataType>decimal(20) unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="278" parent="235" name="arrivalTime">
+      <Position>6</Position>
+      <DataType>decimal(20) unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="279" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="253" parent="233" name="Recipe_id">
+    <foreign-key id="280" parent="235" name="ArrivalAirportId">
+      <ColNames>id</ColNames>
+      <RefSchemaName>realdolmen</RefSchemaName>
+      <RefTableName>airport</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="281" parent="235" name="DepartureAirportId">
+      <ColNames>id</ColNames>
+      <RefSchemaName>realdolmen</RefSchemaName>
+      <RefTableName>airport</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="282" parent="235" name="aircraftId">
+      <ColNames>id</ColNames>
+      <RefSchemaName>realdolmen</RefSchemaName>
+      <RefTableName>aircraft</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="283" parent="236" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="233" name="ingredients_id">
+    <column id="284" parent="236" name="firstName">
       <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="285" parent="236" name="lastName">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="286" parent="236" name="country">
+      <Position>4</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="287" parent="236" name="city">
+      <Position>5</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="288" parent="236" name="mobilePhone">
+      <Position>6</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="289" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="290" parent="236" name="bookekId">
+      <ColNames>id</ColNames>
+      <RefSchemaName>realdolmen</RefSchemaName>
+      <RefTableName>bookedflight</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="291" parent="236" name="userId">
+      <ColNames>id</ColNames>
+      <RefSchemaName>realdolmen</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="292" parent="237" name="id">
+      <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="255" parent="233" name="FK471stlpd2vmv75h0x3mvjsfrj">
-      <ColNames>Recipe_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="256" parent="233" name="FKip6hdfcyn612a9dqfguq1b5jc">
-      <ColNames>ingredients_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <foreign-key id="257" parent="233" name="FK471stlpd2vmv75h0x3mvjsfrj">
-      <ColNames>Recipe_id</ColNames>
-      <RefSchemaName>realdolmen</RefSchemaName>
-      <RefTableName>recipe</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="258" parent="233" name="FKip6hdfcyn612a9dqfguq1b5jc">
-      <ColNames>ingredients_id</ColNames>
-      <RefSchemaName>realdolmen</RefSchemaName>
-      <RefTableName>ingredient</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
+    <column id="293" parent="237" name="email">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="294" parent="237" name="password">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="295" parent="237" name="type">
+      <Position>4</Position>
+      <DataType>tinyint(3) unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="296" parent="237" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

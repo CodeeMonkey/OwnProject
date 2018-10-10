@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<cc:interface>
+    <cc:attribute name="field" required="true"/>
+    <cc:attribute name="entity" required="true"/>
+    <cc:attribute name="label" required="true"/>
+    <cc:attribute name="pattern" />
+</cc:interface>
+<cc:implementation>
+    <div class="form-group">
+        <h:outputLabel for="#{cc.attrs.field}">#{cc.attrs.label} <c:if test="#{not empty cc.attrs.pattern}">
+            <small>(#{cc.attrs.pattern})</small></c:if>
+        </h:outputLabel>
+        <h:inputText id="#{cc.attrs.field}" value="#{cc.attrs.entity[cc.attrs.field]}" styleClass="form-control">
+                <c:if test="#{not empty cc.attrs.pattern}">
+                    <f:convertDateTime pattern="#{cc.attrs.pattern}"/>
+                </c:if>
+        </h:inputText>
+    </div>
+</cc:implementation>
+</html>

@@ -2,15 +2,57 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:t="http://xmlns.jcp.org/jsf/composite/tags">
+
+<h:head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <h:outputStylesheet library="css" name="index.css"  />
+    <title>TogethAir</title>
+    <h:outputStylesheet library="bootstrap-3.3.6" name="css/bootstrap-jsf.css"/>
+</h:head>
 
     <ui:composition template="/template.xhtml">
         <ui:define name="pageContent">
             <h1>#{msgs['page.index.title']}</h1>
+            <div class="container">
+            <br/>
+            <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+            <h:form styleClass="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col">
 
-            <h:link outcome="ingredients" styleClass="btn btn-default">#{msgs['ingredients.list']}</h:link>
-           <!-- <h:link value="#{msgs['links.register']}" outcome="registration" styleClass="btn btn-default"/>-->
+                            <t:input label="First name:" field="firstName" entity="#{personBean.firstname}" />
 
+                            <t:input label="Last name:" field="lastName" entity="#{personBean.person}" />
+
+
+                        <br/>
+                            <h:commandButton action="confirm" styleClass="btn btn-primary" value="Confirm"/>
+
+
+                        <h:inputText styleClass="form-control form-control-lg form-control-borderless" id="search" value="#{flightBean.searchString}"></h:inputText>
+                    </div>
+                    <div class="col-auto">
+                        <h:commandButton styleClass="btn btn-lg btn-primary" value="Search!" action="#{flightBean.search(flightBean.searchString)}">
+                            <f:ajax execute="search" action="output"></f:ajax>
+                        </h:commandButton>
+                    </div>
+                </div>
+                <!--<h:outputText id="output" value="#{bookBean.book.title}"></h:outputText>-->
+            </h:form>
+            <!--  <h:link outcome="ingredients" styleClass="btn btn-default">#{msgs['ingredients.list']}</h:link>
+            <h:link value="#{msgs['links.register']}" outcome="registration" styleClass="btn btn-default"/>-->
+            </div>
+                <!--end of col-->
+            </div>
+            </div>
         </ui:define>
     </ui:composition>
 
