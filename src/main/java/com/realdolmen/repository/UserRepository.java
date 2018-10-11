@@ -1,7 +1,6 @@
 package com.realdolmen.repository;
 
 import com.realdolmen.domain.UserEntity;
-import com.realdolmen.domain.UserEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

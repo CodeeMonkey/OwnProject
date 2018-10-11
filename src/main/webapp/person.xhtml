@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+
+<ui:composition template="template.xhtml">
+    <ui:define name="pageContent">
+        <h1>People data</h1>
+        <p>This page is rendered by JSF.</p>
+        <h:dataTable id="peopleTable" value="#{personBean.allPeople()}" var="person" styleClass="table table-striped">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Id"/>
+                </f:facet>
+                <h:outputText value="#{person.id}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="First Name"/>
+                </f:facet>
+                <h:outputText value="#{person.firstName}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Last Name"/>
+                </f:facet>
+                <h:outputText value="#{person.lastName}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Controls"/>
+                </f:facet>
+                <h:form>
+                    <h:commandLink styleClass="btn btn-xs btn-danger">
+                        <span class="glyphicon glyphicon-remove"></span> Remove
+                        <f:ajax render="peopleTable" listener="#{personBean.remove(person.id)}"/>
+                    </h:commandLink>
+                </h:form>
+            </h:column>
+        </h:dataTable>
+        <h:form id="refreshForm">
+            <h:commandLink id="refresh" styleClass="btn btn-xs btn-default">
+                <span class="glyphicon glyphicon-refresh"></span> Refresh
+                <f:ajax render=":peopleTable" />
+            </h:commandLink>
+        </h:form>
+
+        <script type="text/javascript">
+            var ws = new WebSocket('ws://localhost:8080/jee7-websockets-solution/persons');    // Use wss:// for secure
+            ws.onopen = function() {
+                ws.onmessage = function(message) {
+                    var messageElement = $('#message');
+                    messageElement.html("<strong>Message reveived: </strong>" + message.data);
+                    if (message.data == 'success') {
+                        messageElement.addClass('alert-success');
+                        messageElement.fadeIn('slow', function(){$('#refreshForm\\:refresh').click();}).delay(2000).fadeOut('slow', function(){messageElement.removeClass('alert-success')});
+
+                    } else {
+                        messageElement.addClass('alert-danger');
+                        messageElement.fadeIn('slow').delay(2000).fadeOut('slow', function(){messageElement.removeClass('alert-danger')});
+                    }
+                }
+            };
+            function sendPerson() {
+                var firstName = $('#firstName').val();
+                var lastName = $('#lastName').val();
+                ws.send(firstName + ' ' + lastName);
+            }
+        </script>
+        <br/>
+
+        <form>
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input id="firstName" class="form-control" name="firstName"/>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input id="lastName" class="form-control" name="lastName"/>
+            </div>
+
+            <button type="button" class="btn btn-xs btn-primary" onclick="sendPerson();return false;"><span class="glyphicon glyphicon-plus-sign"></span> Add Person</button>
+
+        </form>
+        <br/>
+        <div id="message" class="alert" style="display:none"></div>
+    </ui:define>
+</ui:composition>
+
+</html>

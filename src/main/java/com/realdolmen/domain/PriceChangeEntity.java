@@ -1,6 +1,7 @@
 package com.realdolmen.domain;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 public class PriceChangeEntity {
 
@@ -38,4 +39,22 @@ public class PriceChangeEntity {
 
     public AirlineEntity getAirlineFK() { return airlineFK; }
     public void setAirlineFK(AirlineEntity airlineFK) { this.airlineFK = airlineFK; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PriceChangeEntity)) return false;
+        PriceChangeEntity that = (PriceChangeEntity) o;
+        return getId() == that.getId() &&
+                getStartdate() == that.getStartdate() &&
+                getEnddate() == that.getEnddate() &&
+                getChangeRate() == that.getChangeRate() &&
+                Objects.equals(getType(), that.getType()) &&
+                Objects.equals(getAirlineFK(), that.getAirlineFK());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getType(), getStartdate(), getEnddate(), getChangeRate(), getAirlineFK());
+    }
 }

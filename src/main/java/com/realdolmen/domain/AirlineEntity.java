@@ -12,14 +12,13 @@ public class AirlineEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name = "type")
-    private String type;
+    @Column(name = "code")
+    private String code;
     @Column(name = "name")
     private String name;
 
     @ManyToMany
     private Set<AirportEntity> airportFK;
-
 
     public long getId() {
         return id;
@@ -29,10 +28,10 @@ public class AirlineEntity {
     }
 
     public String getType() {
-        return type;
+        return code;
     }
     public void setType(String type) {
-        this.type = type;
+        this.code = type;
     }
 
     public String getName() {
@@ -51,12 +50,12 @@ public class AirlineEntity {
         if (o == null || getClass() != o.getClass()) return false;
         AirlineEntity that = (AirlineEntity) o;
         return id == that.id &&
-                Objects.equals(type, that.type) &&
+                Objects.equals(code, that.code) &&
                 Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, name);
+        return Objects.hash(id, code, name);
     }
 }

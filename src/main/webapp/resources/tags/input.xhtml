@@ -6,7 +6,6 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 <cc:interface>
     <cc:attribute name="field" required="true"/>
-    <cc:attribute name="entity" required="true"/>
     <cc:attribute name="label" required="true"/>
     <cc:attribute name="pattern" />
 </cc:interface>
@@ -15,7 +14,8 @@
         <h:outputLabel for="#{cc.attrs.field}">#{cc.attrs.label} <c:if test="#{not empty cc.attrs.pattern}">
             <small>(#{cc.attrs.pattern})</small></c:if>
         </h:outputLabel>
-        <h:inputText id="#{cc.attrs.field}" value="#{cc.attrs.entity[cc.attrs.field]}" styleClass="form-control">
+        <h:inputText id="#{cc.attrs.field}" value="#{cc.attrs.entity[cc.attrs.field]}" styleClass="form-control"
+                    placeholder="#{cc.attrs.field}">
                 <c:if test="#{not empty cc.attrs.pattern}">
                     <f:convertDateTime pattern="#{cc.attrs.pattern}"/>
                 </c:if>

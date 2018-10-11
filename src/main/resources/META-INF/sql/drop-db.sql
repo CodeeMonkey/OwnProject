@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS `aircraft`;
+DROP TABLE IF EXISTS `airline`;
+DROP TABLE IF EXISTS `airport`;
+DROP TABLE IF EXISTS `airline_airport`;
+DROP TABLE IF EXISTS `bookedflight`;
+DROP TABLE IF EXISTS `bookedflight_user`;
+DROP TABLE IF EXISTS `discount`;
+DROP TABLE IF EXISTS `employee`;
+DROP TABLE IF EXISTS `login`;
+DROP TABLE IF EXISTS `partneremployee`;
+DROP TABLE IF EXISTS `person`;
+DROP TABLE IF EXISTS `shedule`;
+DROP TABLE IF EXISTS `user`;

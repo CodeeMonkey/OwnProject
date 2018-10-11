@@ -1,7 +1,6 @@
 package com.realdolmen.service.remotes;
 
 import com.realdolmen.domain.UserEntity;
-
 import javax.ejb.Remote;
 import java.util.List;
 
