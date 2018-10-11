@@ -7,16 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dccd9a96-a7ac-44c3-b7ff-2daf463b2065" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/tags/input.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/DiscountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/DiscountEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ErrorMessages_nl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ErrorMessages_nl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Messages_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Messages_fr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Messages_nl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Messages_nl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/ApplicationBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resultsVisitor.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirportEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirportEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/BookedflightEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/BookedflightEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -211,52 +206,64 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="css" value="120" />
           <entry key="dummy" value="8" />
-          <entry key="java" value="1887" />
+          <entry key="java" value="3012" />
           <entry key="properties" value="22" />
-          <entry key="txt" value="68" />
-          <entry key="xhtml" value="74" />
-          <entry key="xml" value="95" />
+          <entry key="sql" value="103" />
+          <entry key="txt" value="277" />
+          <entry key="xhtml" value="572" />
+          <entry key="xml" value="327" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1887" />
-          <entry key="PLAIN_TEXT" value="76" />
+          <entry key="CSS" value="120" />
+          <entry key="JAVA" value="3012" />
+          <entry key="PLAIN_TEXT" value="285" />
           <entry key="Properties" value="22" />
-          <entry key="XHTML" value="74" />
-          <entry key="XML" value="95" />
+          <entry key="SQL" value="103" />
+          <entry key="XHTML" value="572" />
+          <entry key="XML" value="327" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
+          <entry key="css" value="1" />
+          <entry key="gitignore" value="1" />
           <entry key="iml" value="3" />
-          <entry key="java" value="221" />
+          <entry key="java" value="492" />
           <entry key="md" value="1" />
           <entry key="properties" value="16" />
+          <entry key="sass" value="2" />
+          <entry key="sql" value="24" />
           <entry key="svg" value="1" />
-          <entry key="xhtml" value="36" />
-          <entry key="xml" value="40" />
+          <entry key="xhtml" value="63" />
+          <entry key="xml" value="62" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
+          <entry key="CSS" value="1" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="221" />
+          <entry key="JAVA" value="492" />
           <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="16" />
+          <entry key="SQL" value="24" />
           <entry key="SVG" value="1" />
-          <entry key="XHTML" value="36" />
-          <entry key="XML" value="40" />
+          <entry key="Sass" value="2" />
+          <entry key="XHTML" value="63" />
+          <entry key="XML" value="62" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
-          <entry key="git.branch.checkout.local" value="17" />
+          <entry key="git.branch.checkout.local" value="27" />
           <entry key="git.branch.checkout.remote" value="1" />
-          <entry key="git.branch.merge" value="9" />
+          <entry key="git.branch.merge" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -267,93 +274,81 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/template.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-348">
-              <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/PersonServiceBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="10" column="84" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
+            <state relative-caret-position="204">
+              <caret line="12" column="58" lean-forward="true" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/UserBean.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/mapping.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="170">
+              <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/PersonBean.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/ingredients.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+            <state relative-caret-position="102">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/person.xhtml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resultsVisitor.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="67" column="53" lean-forward="true" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/tags/input.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+            <state relative-caret-position="306">
+              <caret line="27" column="18" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="27" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/ee7/taglib/html_basic.taglib.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37287">
-              <caret line="4209" column="4" selection-start-line="4209" selection-start-column="4" selection-end-line="4209" selection-end-column="4" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+          <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Messages.properties">
-          <provider editor-type-id="ResourceBundle" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Messages_en.properties">
-          <provider editor-type-id="ResourceBundle" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/ApplicationBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state relative-caret-position="255">
+              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#723#724#0" expanded="true" />
+                <element signature="e#779#780#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -378,90 +373,127 @@
       <find>javax.faces</find>
       <find>security</find>
       <find>Person</find>
-      <find>person</find>
       <find>PersonEntity</find>
       <find>AircraftEntity</find>
       <find>BookedflightEntity</find>
       <find>prime</find>
       <find>entity</find>
+      <find>webso</find>
+      <find>websocket</find>
+      <find>PersonRepos</find>
+      <find>enti</find>
+      <find>aircraft</find>
+      <find>airline</find>
+      <find>bookedflight</find>
+      <find>person</find>
+      <find>airportRepository</find>
+      <find>AirportEntity</find>
+      <find>BookedFlightEntity</find>
+      <find>Airport</find>
+      <find>airport</find>
+      <find>ERROR</find>
+      <find>input</find>
+      <find>userService</find>
     </findStrings>
     <replaceStrings>
       <replace>recipe</replace>
       <replace>ingredient</replace>
       <replace />
       <replace>User</replace>
-      <replace>user</replace>
       <replace>UserEntity</replace>
-      <replace>AirlineEntity</replace>
       <replace>AirportEntity</replace>
-      <replace>BookedflightEntity</replace>
       <replace>DiscountEntity</replace>
-      <replace>SheduleEntity</replace>
       <replace>PriceChangeEntity</replace>
+      <replace>aircraftRepository</replace>
+      <replace>airlineRepository</replace>
+      <replace>bookedflight</replace>
+      <replace>discountRepository</replace>
+      <replace>discount</replace>
+      <replace>bookedFlight</replace>
+      <replace>AirlineEntity</replace>
+      <replace>SheduleEntity</replace>
+      <replace>aircraft</replace>
+      <replace>airline</replace>
+      <replace>BookedFlight</replace>
+      <replace>BookedflightEntity</replace>
+      <replace>Discount</replace>
+      <replace>employee</replace>
+      <replace>login</replace>
+      <replace>partnerEmployee</replace>
+      <replace>Person</replace>
+      <replace>priceChange</replace>
+      <replace>shedule</replace>
+      <replace>user</replace>
+      <replace>applicationService</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="l" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Daniel" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/course/domain/Recipe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/course/beans/IngredientsBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/IngredientsBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/utils/DateUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/Person.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirportEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/BookedflightEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/SheduleEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/repository/PersonRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/PersonServiceRemote.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PersonEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/security/CustomInMemoryIdentityStore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/security/ApplicationConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/security/LoginBackIn.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/security/LogoutBacking.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/login.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/security/LoginBacking.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/PersonBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/security/LoginBacking.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/UserEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/dashboard.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PriceChange.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AircraftEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/UserServiceRemote.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/PersonServiceRemote.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/PersonServiceBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/UserBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/AircraftServiceRemote.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/UserServiceBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PriceChangeEnitity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/DiscountServiceRemote.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/AirlineServiceRemote.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/AirportServiceRemote.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/BookedFlightServiceRemote.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/PriceChangeServiceRemote.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/SheduleServiceRemote.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirlineEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PriceChangeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/DiscountEntity.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/ErrorMessages_nl.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/Messages_fr.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/Messages_en.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/Messages_nl.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AircraftEntity.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/template.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/tags/input.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/tags/input.xhtml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PartnerEmployeeEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/EmployeeEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/UserEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/LoginServiceBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/repository/PriceChangeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PriceChangeEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/repository/SheduleRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/AircraftServiceBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/SheduleServiceBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/AircraftServiceRemote.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/AirportBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirlineEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/AircraftBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/BookedFlightBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/DiscountBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/EmployeeBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/LoginBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/PartnerEmployeeBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/PersonBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/PriceChangeBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/SheduleBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/BookedFlightServiceBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/AirportServiceBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/DiscountServiceBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/PriceChangeServiceBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/AirlineBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/service/AirlineServiceBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/repository/BookedFlightRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/repository/AirlineRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/repository/AircraftRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/repository/DiscountRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PersonEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/sql/drop-db.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirportEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/domain/BookedflightEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/UserBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/realdolmen/beans/ApplicationBean.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resultsVisitor.xhtml" />
       </list>
     </option>
   </component>
@@ -478,11 +510,15 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="45" />
-    <option name="y" value="66" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/src/main/webapp/resources/css/bulma-0.7.1/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="476" />
+    <option name="width" value="1330" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -556,34 +592,6 @@
               <item name="togethair" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="realdolmen" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="togethair" type="b2602c69:ProjectViewProjectNode" />
-              <item name="togethair" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="realdolmen" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="remotes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="togethair" type="b2602c69:ProjectViewProjectNode" />
-              <item name="togethair" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="realdolmen" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="togethair" type="b2602c69:ProjectViewProjectNode" />
-              <item name="togethair" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -599,6 +607,15 @@
               <item name="togethair" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="togethair" type="b2602c69:ProjectViewProjectNode" />
+              <item name="togethair" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -608,6 +625,42 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="togethair" type="b2602c69:ProjectViewProjectNode" />
+              <item name="togethair" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="togethair" type="b2602c69:ProjectViewProjectNode" />
+              <item name="togethair" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="togethair" type="b2602c69:ProjectViewProjectNode" />
+              <item name="togethair" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="togethair" type="b2602c69:ProjectViewProjectNode" />
+              <item name="togethair" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="tags" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="togethair" type="b2602c69:ProjectViewProjectNode" />
@@ -628,11 +681,12 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="JPA.DatabaseSchemaImportDialog" value="13457d9e-cf87-49b0-b4b9-9c15fdb0669b" />
+    <property name="SearchEverywhereHistoryKey" value="PersonRepositor&#9;FILE&#9;file://C:/Users/SSRBD46/Desktop/Project 1/togethair/src/main/java/com/realdolmen/repository/PersonRepository.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539189909149" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539275005645" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Solutions/jee7-solutions/jee7-jsf-10-ajax-solution" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -641,22 +695,27 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SSRBD46\Desktop\Project 1\togethair\src\main\resources\META-INF\sql" />
+      <recent name="C:\Users\SSRBD46\Desktop\Project 1\togethair\src\main\resources\META-INF" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="" />
       <recent name="com.realdolmen.domain" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.realdolmen.service.remotes" />
+      <recent name="com.realdolmen.beans" />
       <recent name="com.realdolmen.service" />
+      <recent name="com.realdolmen.repository" />
+      <recent name="com.realdolmen.service.remotes" />
       <recent name="com.realdolmen.course.service" />
-      <recent name="com.realdolmen.course.beans" />
-      <recent name="com.realdolmen.course.repository" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SSRBD46\Desktop\Project 1\togethair\src\main\webapp" />
       <recent name="C:\Users\SSRBD46\Desktop\Project 1\togethair\src\main\webapp\resources" />
       <recent name="C:\Users\SSRBD46\Desktop\Project 1\togethair\src\main\resources\META-INF" />
       <recent name="C:\Users\SSRBD46\Desktop\projectId\src\main\webapp" />
       <recent name="C:\Users\SSRBD46\Desktop\projectId\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\SSRBD46\Desktop\projectId\src\main" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -673,6 +732,15 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pom.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/index.xhtml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/resources/css/bulma-0.7.1/bulma.sass</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/resources/css/bulma-0.7.1/sass/base/_all.sass</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/resources/css/bulma-0.7.1/sass/components/_all.sass</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/resources/css/bulma-0.7.1/sass/elements/_all.sass</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/resources/css/bulma-0.7.1/sass/utilities/_all.sass</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/resources/css/index.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/template.xhtml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -680,7 +748,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/test.xhtml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/realdolmen/view/CalendarView.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/person.xhtml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/resources/img/logo.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/resources/js/bulma.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -850,7 +921,6 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="projectId:war" />
           <artifact name="toGethAir:war" />
         </option>
       </method>
@@ -965,18 +1035,68 @@
       <option name="project" value="LOCAL" />
       <updated>1539176333983</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed database configuration">
+      <created>1539195622503</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539195622503</updated>
+    </task>
+    <task id="LOCAL-00004" summary="index xhtml initial commit">
+      <created>1539240533915</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539240533915</updated>
+    </task>
+    <task id="LOCAL-00005" summary="working dev">
+      <created>1539241453828</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1539241453828</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed Entities">
+      <created>1539246859779</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1539246859779</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed Entities">
+      <created>1539247105635</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1539247105635</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Made Repositories and beans for CRUD operations back-end">
+      <created>1539260955803</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1539260955803</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Edited persistence file and create sql">
+      <created>1539262442521</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1539262442521</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62293000" />
+    <option name="totallyTimeSpent" value="96273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6804309" visible="true" weight="0.26979867" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8411347" visible="true" weight="0.23020135" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Persistence" order="2" sideWeight="0.3195691" side_tool="true" weight="0.26979867" />
+      <window_info id="Persistence" order="2" sideWeight="0.15886524" side_tool="true" weight="0.2590604" />
       <window_info id="Designer" order="3" />
       <window_info id="Image Layers" order="4" />
       <window_info id="UI Designer" order="5" />
@@ -985,18 +1105,18 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.075177304" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.031205675" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.15319149" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.0" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.11205674" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3106383" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.55744684" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.16028368" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.61702126" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
@@ -1023,170 +1143,53 @@
     <MESSAGE value="inital Commit ToGethAir" />
     <MESSAGE value="Domain Entities Added" />
     <MESSAGE value="Remote ServiceBean Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remote ServiceBean Added" />
+    <MESSAGE value="fixed database configuration" />
+    <MESSAGE value="index xhtml initial commit" />
+    <MESSAGE value="working dev" />
+    <MESSAGE value="Fixed Entities" />
+    <MESSAGE value="Made Repositories and beans for CRUD operations back-end" />
+    <MESSAGE value="Edited persistence file and create sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited persistence file and create sql" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/security/CustomInMemoryIdentityStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/security/LogoutBacking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="33" column="111" lean-forward="true" selection-start-line="33" selection-start-column="111" selection-end-line="33" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/security/LoginBacking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/security/ApplicationConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PriceChange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/dashboard.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/repository/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/UserServiceBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding>
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#941#942#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/AircraftServiceRemote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/AirlineServiceRemote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/AirportServiceRemote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/BookedFlightServiceRemote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/DiscountServiceRemote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/PersonServiceRemote.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/SheduleEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/repository/AirlineRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state relative-caret-position="187">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/DiscountBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/AirlineServiceBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1197,224 +1200,312 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirlineEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/PersonBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding>
-            <element signature="e#1382#1383#0" expanded="true" />
-            <element signature="e#1433#1434#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/Employee.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/UserEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="578">
+          <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/DiscountEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state relative-caret-position="204">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AircraftEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/SheduleEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="23" column="74" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/BookedflightEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PartnerEmployeeEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="14" />
+        <state relative-caret-position="476">
+          <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/view/CalendarView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="-153" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/EmployeeBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="76" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/PriceChangeServiceRemote.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/EmployeeEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/SheduleServiceRemote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/UserServiceRemote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirportEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="88" column="66" selection-start-line="88" selection-start-column="66" selection-end-line="88" selection-end-column="66" />
+        <state relative-caret-position="85">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PriceChangeEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/repository/LoginRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/DiscountServiceBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/PartnerEmployeeServiceBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/sql/create-db.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PersonEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/repository/PriceChangeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding>
+            <element signature="e#622#623#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/LoginEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/sql/data.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/template.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/BookedFlightBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="90" lean-forward="true" selection-start-line="20" selection-start-column="90" selection-end-line="20" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/repository/AircraftRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/repository/AirportRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/AirportServiceBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="84" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/remotes/AirportServiceRemote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirportEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/repository/BookedFlightRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/sql/drop-db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/data.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AirlineEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/BookedflightEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="53" column="36" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/AircraftEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/AircraftBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/AirlineBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/PersonEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/UserEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ingredients.xhtml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/domain/DiscountEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ErrorMessages.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ErrorMessages_en.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ErrorMessages_fr.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ErrorMessages_nl.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Messages_nl.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Messages_fr.properties">
-      <provider editor-type-id="ResourceBundle" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/AirportBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Messages_en.properties">
-      <provider editor-type-id="ResourceBundle" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/LoginBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Messages.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/ee7/taglib/html_basic.taglib.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37287">
-          <caret line="4209" column="4" selection-start-line="4209" selection-start-column="4" selection-end-line="4209" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/PersonBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/service/PersonServiceBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="102">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/UserBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="255">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/realdolmen/beans/ApplicationBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/mapping.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="10" column="84" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
+        <state relative-caret-position="204">
+          <caret line="12" column="58" lean-forward="true" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/template.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-348">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        <state relative-caret-position="306">
+          <caret line="27" column="18" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="27" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/tags/input.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/ingredients.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        <state relative-caret-position="102">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/person.xhtml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resultsVisitor.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="67" column="53" lean-forward="true" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
         </state>
       </provider>
     </entry>

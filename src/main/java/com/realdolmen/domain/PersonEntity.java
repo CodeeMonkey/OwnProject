@@ -8,16 +8,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "traveler", schema = "realdolmen")
+@Table(name = "person", schema = "realdolmen")
 @NamedQuery(name = "find all people", query = "select p from PersonEntity p order by p.lastName, p.firstName")
 public class PersonEntity {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotBlank
@@ -28,8 +28,6 @@ public class PersonEntity {
     private String lastName;
     @Column(name = "country", length = 50)
     private String country;
-    @Column(name = "city", length = 50)
-    private String city;
     @Column(name = "mobilePhone", length = 50)
     private String mobilePhone;
     @Past
@@ -42,15 +40,10 @@ public class PersonEntity {
     private int version;
 
     @OneToOne
-    private UserEntity userFK;
-    @ManyToMany
-    private Set<BookedflightEntity> bookedflightFK;
+    private LoginEntity login;
 
 
-    @Column(name = "id")
-    public long getId() {
-        return id;
-    }
+    public long getId() {  return id; }
     public void setId(long id) {
         this.id = id;
     }
@@ -76,13 +69,6 @@ public class PersonEntity {
         this.country = country;
     }
 
-    public String getCity() {
-        return city;
-    }
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public String getMobilePhone() {
         return mobilePhone;
     }
@@ -90,9 +76,15 @@ public class PersonEntity {
         this.mobilePhone = mobilePhone;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
+    public long getAge() { return age; }
+    public void setAge(long age) { this.age = age; }
+
+    public void setVersion(int version) { this.version = version; }
+    public LoginEntity getLogin() { return login; }
+
+    public void setLogin(LoginEntity login) { this.login = login; }
+
+
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
@@ -106,6 +98,8 @@ public class PersonEntity {
     public String name() {
         return firstName + " " + lastName;
     }
+
+    public Date getBirthDate() { return birthDate; }
 
     @PostLoad
     public void initializeAge() {
@@ -121,12 +115,11 @@ public class PersonEntity {
                 Objects.equals(firstName, that.firstName) &&
                 Objects.equals(lastName, that.lastName) &&
                 Objects.equals(country, that.country) &&
-                Objects.equals(city, that.city) &&
                 Objects.equals(mobilePhone, that.mobilePhone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, country, city, mobilePhone);
+        return Objects.hash(id, firstName, lastName, country, mobilePhone);
     }
 }

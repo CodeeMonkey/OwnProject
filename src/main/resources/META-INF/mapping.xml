@@ -128,15 +128,12 @@
             <basic name="country">
                 <column name="country"/>
             </basic>
-            <basic name="city">
-                <column name="city"/>
-            </basic>
             <basic name="mobilePhone">
                 <column name="mobilePhone"/>
             </basic>
         </attributes>
     </entity>
-    <entity class="com.realdolmen.domain.UserEntity">
+    <entity class="com.realdolmen.domain.LoginEntity">
         <table name="user" schema="realdolmen" catalog=""/>
         <attributes>
             <id name="id">
@@ -147,9 +144,6 @@
             </basic>
             <basic name="password">
                 <column name="password"/>
-            </basic>
-            <basic name="type">
-                <column name="type"/>
             </basic>
         </attributes>
     </entity>

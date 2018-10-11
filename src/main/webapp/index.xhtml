@@ -8,52 +8,187 @@
       xmlns:t="http://xmlns.jcp.org/jsf/composite/tags">
 
 <h:head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <h:outputStylesheet library="css" name="index.css"  />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <h:outputStylesheet library="css" name="index.css"/>
     <title>TogethAir</title>
-    <h:outputStylesheet library="bootstrap-3.3.6" name="css/bootstrap-jsf.css"/>
+    <!--<h:outputStylesheet library="bootstrap-3.3.6" name="css/bootstrap-jsf.css"/>-->
 </h:head>
 
-    <ui:composition template="/template.xhtml">
-        <ui:define name="pageContent">
-            <h1>#{msgs['page.index.title']}</h1>
-            <div class="container">
-            <br/>
-            <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-            <h:form styleClass="card card-sm">
-                <div class="card-body row no-gutters align-items-center">
-                    <div class="col">
+<ui:composition template="/template.xhtml">
+    <ui:define name="pageContent">
 
-                            <t:input label="First name:" field="firstName" entity="#{personBean.firstname}" />
+        <div class="container">
+            <div id="flow">
+                <span class="flow-1"></span>
+                <span class="flow-2"></span>
+                <span class="flow-3"></span>
+            </div>
+            <div class="section">
+                <div class="box">
+                    <div class="field has-addons">
+                        <h:form>
+                        <div class="control is-expanded">
+                            <p:outputLabel value="Departure" for="departure" />
+                            <p:autoComplete id="departure" value="test"
+                                            var="theme" itemLabel="test1" itemValue="test2"
+                                            groupBy="test" scrollHeight="250"/>
+                            <p:outputLabel value="Destination" for="destination" />
+                            <p:autoComplete id="destination" value="test"
+                                            var="theme" itemLabel="test1" itemValue="test2"
+                                            groupBy="test" scrollHeight="250"/>
+                            <p:outputLabel value="Passenger(s)" for="passenger" />
+                            <p:autoComplete id="passenger" dropdown="true" />
 
-                            <t:input label="Last name:" field="lastName" entity="#{personBean.person}" />
-
-
-                        <br/>
-                            <h:commandButton action="confirm" styleClass="btn btn-primary" value="Confirm"/>
-
-
-                        <h:inputText styleClass="form-control form-control-lg form-control-borderless" id="search" value="#{flightBean.searchString}"></h:inputText>
-                    </div>
-                    <div class="col-auto">
-                        <h:commandButton styleClass="btn btn-lg btn-primary" value="Search!" action="#{flightBean.search(flightBean.searchString)}">
-                            <f:ajax execute="search" action="output"></f:ajax>
-                        </h:commandButton>
+                            <!--<input class="input has-text-centered" type="search" placeholder="» » » » » » find me « « « « « «"/>-->
+                        </div>
+                            <div class="control is-expanded">
+                                <p:outputLabel for="depdate" value="Departure date:" />
+                                <p:calendar id="depdate" value="#{calendarView.departureDate}" />
+                                <p:outputLabel for="destdate" value="Destination date:" />
+                                <p:calendar id="destdate" value="#{calendarView.destinationDate}" />
+                            </div>
+                        <div class="control">
+                            <a class="button is-info">Search</a>
+                        </div>
+                    </h:form>
                     </div>
                 </div>
-                <!--<h:outputText id="output" value="#{bookBean.book.title}"></h:outputText>-->
-            </h:form>
-            <!--  <h:link outcome="ingredients" styleClass="btn btn-default">#{msgs['ingredients.list']}</h:link>
-            <h:link value="#{msgs['links.register']}" outcome="registration" styleClass="btn btn-default"/>-->
+                <!-- Developers -->
+                <div class="row columns">
+                    <div class="column is-one-third">
+                        <div class="card large">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="resources/img/logo.jpg" alt="Logo"/>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-96x96">
+                                            <img src="https://i.imgsafe.org/a4/a4bb9acc5e.jpeg" alt="Image"/>
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-4 no-padding">Okinami</p>
+                                        <p><span class="title is-6"><a href="http://twitter.com/#">@twitterid</a></span></p>
+                                        <p class="subtitle is-6">Lead Developer</p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    The Beast stumbled in the dark for it could no longer see the path. It started to fracture and weaken, trying to reshape itself into the form of metal. Even the witches would no longer lay eyes upon it, for it had become hideous and twisted.
+                                    <div class="background-icon"><span class="icon-twitter"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card large">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="https://source.unsplash.com/uzDLtlPY8kQ" alt="Image"/>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-96x96">
+                                            <img src="https://cdn.discordapp.com/avatars/244932903530659841/0c924a19fcf1b5c59bc9dc1b58b61bb0.jpg?size=1024" alt="Image"/>
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-4 no-padding">McSocks</p>
+                                        <p><span class="title is-6"><a href="http://twitter.com/#">@twitterid</a></span></p>
+                                        <p class="subtitle is-6">Developer</p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    The soul of the Beast seemed lost forever. Then, by the full moon's light, a child was born; child with the unbridled soul of the Beast that would make all others pale in comparison.
+                                    <div class="background-icon"><span class="icon-facebook"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card large">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="https://source.unsplash.com/pe_R74hldW4" alt="Image"/>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-96x96">
+                                            <img src="https://i.imgsafe.org/a5/a5e978ce20.jpeg" alt="Image"/>
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-4 no-padding">The Conceptionist</p>
+                                        <p><span class="title is-6"><a href="http://twitter.com/#">@twitterid</a></span></p>
+                                        <p class="subtitle is-6">Developer</p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam! Labore reprehenderit beatae magnam animi!
+                                    <div class="background-icon"><span class="icon-barcode"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-                <!--end of col-->
-            </div>
-            </div>
-        </ui:define>
-    </ui:composition>
+        </div>
+
+        <!--<div id="header-main">-->
+            <!--<div id="header-wrapper">-->
+                <!--<nav class="secondary-nav"></nav>-->
+                <!--<div id="logo"></div>-->
+                <!--<div id="primary-nav"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        <!--<h1>#{msgs['page.index.title']}</h1>-->
+        <!--<div class="container">-->
+            <!--<br/>-->
+            <!--<div class="row justify-content-center">-->
+                <!--<div class="col-12 col-md-10 col-lg-8">-->
+                    <!--<h:form styleClass="card card-sm">-->
+                        <!--<div class="card-body row no-gutters align-items-center">-->
+                            <!--<div class="col">-->
+
+                                <!--<t:input label="First name:" field="firstName" />-->
+
+                                <!--<t:input label="Last name:" field="lastName" />-->
+
+
+                                <!--<br/>-->
+                                <!--<h:commandButton action="confirm" styleClass="btn btn-primary" value="Confirm"/>-->
+
+
+                                <!--<h:inputText styleClass="form-control form-control-lg form-control-borderless"-->
+                                             <!--id="search" value="#{flightBean.searchString}"></h:inputText>-->
+                            <!--</div>-->
+                            <!--<div class="col-auto">-->
+                                <!--<h:commandButton styleClass="btn btn-lg btn-primary" value="Search!"-->
+                                                 <!--action="#{flightBean.search(flightBean.searchString)}">-->
+                                    <!--<f:ajax execute="search" action="output"></f:ajax>-->
+                                <!--</h:commandButton>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;<h:outputText id="output" value="#{bookBean.book.title}"></h:outputText>&ndash;&gt;-->
+                    <!--</h:form>-->
+                    <!--&lt;!&ndash;  <h:link outcome="ingredients" styleClass="btn btn-default">#{msgs['ingredients.list']}</h:link>-->
+                    <!--<h:link value="#{msgs['links.register']}" outcome="registration" styleClass="btn btn-default"/>&ndash;&gt;-->
+                <!--</div>-->
+                <!--&lt;!&ndash;end of col&ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
+    </ui:define>
+</ui:composition>
 
 </html>

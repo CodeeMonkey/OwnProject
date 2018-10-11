@@ -12,10 +12,10 @@ public class AirportEntity {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "code")
-    private String code;
-    @Column(name = "name")
-    private String name;
+    @Column(name = "airportCode")
+    private String airportcode;
+    @Column(name = "airportName")
+    private String airportName;
     @Column(name = "cityCode")
     private String cityCode;
     @Column(name = "cityName")
@@ -27,9 +27,6 @@ public class AirportEntity {
     @Column(name = "globalRegionLocation")
     private String globalRegionLocation;
 
-    @ManyToMany
-    private Set<AirlineEntity> airlineFK;
-
     public long getId() {
         return id;
     }
@@ -38,17 +35,17 @@ public class AirportEntity {
     }
 
     public String getCode() {
-        return code;
+        return airportcode;
     }
     public void setCode(String code) {
-        this.code = code;
+        this.airportcode = code;
     }
 
     public String getName() {
-        return name;
+        return airportName;
     }
     public void setName(String name) {
-        this.name = name;
+        this.airportName = name;
     }
 
     public String getCityCode() {
@@ -86,8 +83,6 @@ public class AirportEntity {
         this.globalRegionLocation = globalRegionLocation;
     }
 
-    public Set<AirlineEntity> getAirlineFK() { return airlineFK; }
-    public void setAirlineFK(Set<AirlineEntity> airlineFK) { this.airlineFK = airlineFK; }
 
     @Override
     public boolean equals(Object o) {
@@ -95,8 +90,8 @@ public class AirportEntity {
         if (o == null || getClass() != o.getClass()) return false;
         AirportEntity that = (AirportEntity) o;
         return id == that.id &&
-                Objects.equals(code, that.code) &&
-                Objects.equals(name, that.name) &&
+                Objects.equals(airportcode, that.airportcode) &&
+                Objects.equals(airportName, that.airportName) &&
                 Objects.equals(cityCode, that.cityCode) &&
                 Objects.equals(cityName, that.cityName) &&
                 Objects.equals(countryCode, that.countryCode) &&
@@ -106,6 +101,6 @@ public class AirportEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, code, name, cityCode, cityName, countryCode, countryName, globalRegionLocation);
+        return Objects.hash(id, airportcode, airportName, cityCode, cityName, countryCode, countryName, globalRegionLocation);
     }
 }

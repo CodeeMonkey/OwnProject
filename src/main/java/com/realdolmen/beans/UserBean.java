@@ -1,8 +1,6 @@
 package com.realdolmen.beans;
 
-import com.realdolmen.domain.PersonEntity;
 import com.realdolmen.domain.UserEntity;
-import com.realdolmen.service.PersonServiceBean;
 import com.realdolmen.service.UserServiceBean;
 
 import javax.enterprise.context.RequestScoped;
@@ -15,14 +13,12 @@ import java.util.List;
 public class UserBean {
 
     @Inject
-    private UserServiceBean userService;
+    UserServiceBean userService;
 
-    public List<UserEntity> allUsers() {
-        return userService.findAll();
-    }
+    public UserEntity save(UserEntity user){ return userService.save(user); }
+    public UserEntity findById(long userId){ return userService.findById(userId); }
+    public List<UserEntity> findAll(){ return userService.findAll(); }
+    public void remove(long userId){ userService.remove(userId); }
 
-    public void remove(long userId) {
-        userService.remove(userId);
-    }
 
 }

@@ -11,14 +11,18 @@ import java.util.List;
 @Named
 @RequestScoped
 public class PersonBean {
+
     @Inject
-    private PersonServiceBean personService;
+    PersonServiceBean airportService;
 
-    public List<PersonEntity> allPeople() {
-        return personService.findAll();
+    public PersonEntity save(PersonEntity airport){ return airportService.save(airport); }
+    public PersonEntity findById(long airportId){ return airportService.findById(airportId); }
+    public List<PersonEntity> findAll(){
+        return airportService.findAll();
+    }
+    public void remove(long airportId){
+        airportService.remove(airportId);
     }
 
-    public void remove(long personId) {
-        personService.remove(personId);
-    }
+
 }

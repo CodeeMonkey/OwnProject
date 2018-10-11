@@ -23,7 +23,7 @@ public class BookedflightEntity {
     @ManyToOne
     private SheduleEntity sheduleFK;//Each schedule can have many booked Flights
     @ManyToMany
-    private Set<PersonEntity> personFK;//Each booked flight can have many Persons, each Person can have many booked flights
+    private Set<UserEntity> userFK;//Each booked flight can have many Persons, each Person can have many booked flights
 
 
     public long getId() {
@@ -51,8 +51,8 @@ public class BookedflightEntity {
     public SheduleEntity getSheduleFK() { return sheduleFK; }
     public void setSheduleFK(SheduleEntity sheduleFK) { this.sheduleFK = sheduleFK; }
 
-    public Set<PersonEntity> getPersonFK() { return personFK; }
-    public void setPersonFK(Set<PersonEntity> personFK) { this.personFK = personFK; }
+    public Set<UserEntity> getUserFK() { return userFK; }
+    public void setUserFK(Set<UserEntity> userFK) { this.userFK = userFK; }
 
     @Override
     public boolean equals(Object o) {
