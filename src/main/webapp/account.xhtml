@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough" xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
+
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <h:outputStylesheet library="css" name="index.css"/>
+    <title>TogethAir</title>
+</h:head>
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="pageContent">
+        <br/>
+        <div class="hero is-small backgroundGreen">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="subtitle">
+                    My Bookings
+                </h2>
+            </div>
+        </div>
+        </div>
+        <br/>
+        <c:if test="#{currentUserBean.isLoggedIn()}">
+                <c:if test="#{bookedFlightRepository.findAvailableBookedFlight() eq null}">
+                    No bookings
+                </c:if>
+
+        <c:if test="#{bookedFlightRepository.findAvailableBookedFlight() != null}">
+        <c:forEach  items="#{bookedFlightRepository.findAvailableBookedFlight()}" var="booking">
+        <div class="box">
+            <div class="columns">
+                <div class="column is-three-quarters">
+                    <div class="columns">
+                        <div class="column is-3 is-3-tablet is-3-mobile is-mobile-float-left">
+                            <div class="big-logo-flight">
+                                <img class="AirlineLogo"
+                                     src="#{booking.sheduleFK.aircraftFK.airlineFK.imageUrl}"
+                                     width="auto" height="auto" title="#{booking.sheduleFK.aircraftFK.airlineFK.name}"
+                                     alt="#{booking.sheduleFK.aircraftFK.airlineFK.name}"/>
+                            </div>
+                        </div>
+                        <div class="column is-2 is-2-tablet is-2-mobile is-mobile-float-left">
+                            <div class="depart">
+                                                    <span class="date-format align-right">
+                                                         <h:outputText inputStyleClass="customflight-input-label"
+                                                                       value="#{booking.sheduleFK.departureTime}">
+                                                             <f:convertDateTime pattern="HH:mm a"/>
+                                                        </h:outputText>
+                                                    </span>
+                                <span class="city-format align-right">#{booking.sheduleFK.departureAirtportFK.cityCode}</span>
+                            </div>
+                        </div>
+                        <div class="column is-5 is-5-tablet is-4-mobile is-mobile-float-left no-padding">
+                            <div class="flight-stops">
+                                <span class="flightInfo_duration flight_anim-enabled">#{booking.sheduleFK.calculateTravelHoursBetweenFlights(booking.sheduleFK.departureTime, booking.sheduleFK.arrivalTime)}</span>
+                                <ul class="flightstop-line"/>
+                            </div>
+                        </div>
+                        <div class="column is-2 is-2-tablet is-2-mobile is-mobile-float-left">
+                            <div class="arrival">
+                                                    <span class="date-format align-left">
+                                                        <h:outputText inputStyleClass="customflight-input-label"
+                                                                      value="#{booking.sheduleFK.arrivalTime}">
+                                                             <f:convertDateTime pattern="HH:mm a"/>
+                                                        </h:outputText>
+                                                    </span>
+                                <span class="city-format align-right">#{booking.sheduleFK.arrivalAirtportFK.cityCode}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-quarter is-12-mobile">
+                    <p class="currency-format align-right is-mobile-float-none">Method: #{booking.payMethod} </p>
+                    <p class="currency-format align-right is-mobile-float-none">Status: #{booking.payStatus} </p>
+                    <p class="currency-format align-right is-mobile-float-none">€ #{booking.pricePaid} </p>
+                </div>
+            </div>
+        </div>
+        </c:forEach>
+        </c:if>
+                      </c:if>
+    </ui:define>
+</ui:composition>
+</html>

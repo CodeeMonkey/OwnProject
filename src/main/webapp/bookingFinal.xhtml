@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
+
+<h:head>
+    <title>TogethAir</title>
+</h:head>
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="pageContent">
+
+        <c:set var="paid" value="PAID"/>
+        <c:set var="fail" value="FAILED"/>
+        <c:set var="pending" value="PENDING"/>
+
+        <!-- STEPS -->
+        <section class="half-section">
+            <h:form>
+
+                <ul class="steps is-horizontal is-medium is-centered has-content-centered">
+                    <li class="steps-segment">
+                        <p:link outcome="resultsVisitor" styleClass="has-text-dark">
+                                    <span class="steps-marker">
+                                        <span class="icon"><i class="fa fa-inverse fa-plane"></i>
+                                        </span>
+                                    </span>
+                            <div class="steps-content">
+                                <p class="heading">#{msgs['flights']}</p>
+                            </div>
+                        </p:link>
+                    </li>
+                    <li class="steps-segment">
+                        <p:link outcome="detailVisitor" styleClass="has-text-dark">
+                                    <span class="steps-marker">
+                                        <span class="icon"><i class="fa fa-inverse fa-check"></i>
+                                        </span>
+                                    </span>
+                            <div class="steps-content">
+                                <p class="heading">#{msgs['confirmation']}</p>
+                            </div>
+                        </p:link>
+                    </li>
+                    <li class="steps-segment">
+                                <span class="steps-marker">
+                                  <span class="icon">
+                                    <i class="fa fa-inverse fa-credit-card"></i>
+                                  </span>
+                                </span>
+                        <div class="steps-content">
+                            <p class="heading">#{msgs['payment']}</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- IF SUCCESS BOOKING VISITOR PAYMENT -->
+                <section id="heroedgradient" class="hero is-primary is-bold">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h2 class="subtitle center">
+                                #{msgs['flight.booked.success']}
+                            </h2>
+                            <div class="field is-grouped">
+                                <p class="control">
+                                    <h:commandLink action="index" styleClass="btn btn-default" value="#{msgs['links.home']}">
+                                        <i class="fa fa-home"/>
+                                    </h:commandLink>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- BOX DETAILVIEW -->
+                <div id="bookingbox" class="box no-padding">
+
+                    <div id="heroTitle" class="hero is-small">
+                        <div class="hero-body">
+                            <div class="container">
+                                <h2 class="subtitle">
+                                    #{msgs['page.invoice']}
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </h:form>
+        </section>
+
+
+    </ui:define>
+</ui:composition>
+
+</html>

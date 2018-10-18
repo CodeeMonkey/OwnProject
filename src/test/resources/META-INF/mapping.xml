@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="com.realdolmen.domain.AircraftEntity">
+        <table name="aircraft" schema="realdolmen-test" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id"/>
+            </id>
+            <basic name="code">
+                <column name="code"/>
+            </basic>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <basic name="nrFirstClassSeats">
+                <column name="nrFirstClassSeats"/>
+            </basic>
+            <basic name="nrEconomyClassSeats">
+                <column name="nrEconomyClassSeats"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="com.realdolmen.domain.AirlineEntity">
+        <table name="airline" schema="realdolmen-test" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id"/>
+            </id>
+            <basic name="type">
+                <column name="type"/>
+            </basic>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="com.realdolmen.domain.AirportEntity">
+        <table name="airport" schema="realdolmen-test" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id"/>
+            </id>
+            <basic name="code">
+                <column name="code"/>
+            </basic>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <basic name="cityCode">
+                <column name="cityCode"/>
+            </basic>
+            <basic name="cityName">
+                <column name="cityName"/>
+            </basic>
+            <basic name="countryCode">
+                <column name="countryCode"/>
+            </basic>
+            <basic name="countryName">
+                <column name="countryName"/>
+            </basic>
+            <basic name="globalRegionLocation">
+                <column name="globalRegionLocation"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="com.realdolmen.domain.BookedflightEntity">
+        <table name="bookedflight" schema="realdolmen-test" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id"/>
+            </id>
+            <basic name="pricePaid">
+                <column name="pricePaid"/>
+            </basic>
+            <basic name="cancelled">
+                <column name="cancelled"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="com.realdolmen.domain.DiscountEntity">
+        <table name="discount" schema="realdolmen-test" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id"/>
+            </id>
+            <basic name="discountPercentage">
+                <column name="discountPercentage"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="com.realdolmen.domain.ScheduleEntity">
+        <table name="shedule" schema="realdolmen-test" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id"/>
+            </id>
+            <basic name="defaultPrice">
+                <column name="defaultPrice"/>
+            </basic>
+            <basic name="remainingSeats">
+                <column name="remainingSeats"/>
+            </basic>
+            <basic name="date">
+                <column name="date"/>
+            </basic>
+            <basic name="departureTime">
+                <column name="departureTime"/>
+            </basic>
+            <basic name="arrivalTime">
+                <column name="arrivalTime"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="com.realdolmen.domain.LoginEntity">
+        <table name="user" schema="realdolmen-test" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id"/>
+            </id>
+            <basic name="email">
+                <column name="email"/>
+            </basic>
+            <basic name="password">
+                <column name="password"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

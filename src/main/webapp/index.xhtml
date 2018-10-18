@@ -5,21 +5,14 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:t="http://xmlns.jcp.org/jsf/composite/tags">
+>
 
 <h:head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <h:outputStylesheet library="css" name="index.css"/>
-    <title>TogethAir</title>
-    <!--<h:outputStylesheet library="bootstrap-3.3.6" name="css/bootstrap-jsf.css"/>-->
+   <title>TogethAir</title>
 </h:head>
 
 <ui:composition template="/template.xhtml">
     <ui:define name="pageContent">
-
         <div class="container">
             <div id="flow">
                 <span class="flow-1"></span>
@@ -27,34 +20,54 @@
                 <span class="flow-3"></span>
             </div>
             <div class="section">
-                <div class="box">
-                    <div class="field has-addons">
-                        <h:form>
-                        <div class="control is-expanded">
-                            <p:outputLabel value="Departure" for="departure" />
-                            <p:autoComplete id="departure" value="test"
-                                            var="theme" itemLabel="test1" itemValue="test2"
-                                            groupBy="test" scrollHeight="250"/>
-                            <p:outputLabel value="Destination" for="destination" />
-                            <p:autoComplete id="destination" value="test"
-                                            var="theme" itemLabel="test1" itemValue="test2"
-                                            groupBy="test" scrollHeight="250"/>
-                            <p:outputLabel value="Passenger(s)" for="passenger" />
-                            <p:autoComplete id="passenger" dropdown="true" />
-
-                            <!--<input class="input has-text-centered" type="search" placeholder="» » » » » » find me « « « « « «"/>-->
+                <div class="box is-transparent-6" >
+                    <h3 style="margin-top:0">Search your flight :)</h3>
+                    <h:form>
+                        <div class="ui-g ui-fluid">
+                        <div class="ui-g-12 ui-md-2">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon myIcon"><i class="fa fa-plane"></i></span>
+                                <p:autoComplete id="departure" value="#{searchView.departureAirport}" completeMethod="#{searchView.completeAirport}" panelStyleClass="tenrem"
+                                                var="airport" itemLabel="#{airport.airportName}" converter="airportConverter" itemValue="#{airport}" forceSelection="true" placeholder="Departure"/>
+                             </div>
                         </div>
-                            <div class="control is-expanded">
-                                <p:outputLabel for="depdate" value="Departure date:" />
-                                <p:calendar id="depdate" value="#{calendarView.departureDate}" />
-                                <p:outputLabel for="destdate" value="Destination date:" />
-                                <p:calendar id="destdate" value="#{calendarView.destinationDate}" />
+                        <div class="ui-g-12 ui-md-2">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="fa fa-plane"></i></span>
+                                <p:autoComplete id="destination" value="#{searchView.destinationAirport}" completeMethod="#{searchView.completeAirport}" panelStyleClass="tenrem"
+                                                var="airport" itemLabel="#{airport.airportName}" converter="airportConverter" itemValue="#{airport}" forceSelection="true" placeholder="Destination" />
                             </div>
-                        <div class="control">
-                            <a class="button is-info">Search</a>
                         </div>
-                    </h:form>
+                        <div class="ui-g-12 ui-md-2">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="fa fa-calendar"></i></span>
+                                <p:calendar id="depdate" value="#{searchView.departureDate}" placeholder="Departure date"/>
+                            </div>
+                        </div>
+                        <div class="ui-g-12 ui-md-2">
+                            <div class="ui-inputgroup">
+
+                            <p:selectOneMenu id="class" value="#{searchView.classChoice}">
+                            <f:selectItem itemLabel="Economy" itemValue="Economy" />
+                            <f:selectItem itemLabel="Business" itemValue="Business" />
+                                <f:selectItem itemLabel="First class" itemValue="First class" />
+                        </p:selectOneMenu>
+                            </div>
+                        </div>
+                        <div class="ui-g-12 ui-md-2">
+                            <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                            <p:spinner id="basic" min="1" max="9" value="#{searchView.passengers}" style="width:7rem"/>
+                            </div>
+                        </div>
+                        <div class="ui-g-12 ui-md-2">
+                        <div class="control">
+                            <p:commandButton class="button" value="Search" action="#{searchView.search}"/>
+                        </div>
+                        </div>
                     </div>
+                    </h:form>
+
                 </div>
                 <!-- Developers -->
                 <div class="row columns">
@@ -67,74 +80,56 @@
                             </div>
                             <div class="card-content">
                                 <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-96x96">
-                                            <img src="https://i.imgsafe.org/a4/a4bb9acc5e.jpeg" alt="Image"/>
-                                        </figure>
-                                    </div>
                                     <div class="media-content">
-                                        <p class="title is-4 no-padding">Okinami</p>
-                                        <p><span class="title is-6"><a href="http://twitter.com/#">@twitterid</a></span></p>
-                                        <p class="subtitle is-6">Lead Developer</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    The Beast stumbled in the dark for it could no longer see the path. It started to fracture and weaken, trying to reshape itself into the form of metal. Even the witches would no longer lay eyes upon it, for it had become hideous and twisted.
-                                    <div class="background-icon"><span class="icon-twitter"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column is-one-third">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://source.unsplash.com/uzDLtlPY8kQ" alt="Image"/>
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-96x96">
-                                            <img src="https://cdn.discordapp.com/avatars/244932903530659841/0c924a19fcf1b5c59bc9dc1b58b61bb0.jpg?size=1024" alt="Image"/>
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">McSocks</p>
-                                        <p><span class="title is-6"><a href="http://twitter.com/#">@twitterid</a></span></p>
-                                        <p class="subtitle is-6">Developer</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    The soul of the Beast seemed lost forever. Then, by the full moon's light, a child was born; child with the unbridled soul of the Beast that would make all others pale in comparison.
-                                    <div class="background-icon"><span class="icon-facebook"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column is-one-third">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://source.unsplash.com/pe_R74hldW4" alt="Image"/>
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-96x96">
-                                            <img src="https://i.imgsafe.org/a5/a5e978ce20.jpeg" alt="Image"/>
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">The Conceptionist</p>
-                                        <p><span class="title is-6"><a href="http://twitter.com/#">@twitterid</a></span></p>
-                                        <p class="subtitle is-6">Developer</p>
+                                        <p class="title is-4 no-padding">Depart - arrival</p>
+                                        <p class="title is-6">249.99 EUR</p>
+                                        <p class="subtitle is-6">JetAir</p>
                                     </div>
                                 </div>
                                 <div class="content">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam! Labore reprehenderit beatae magnam animi!
-                                    <div class="background-icon"><span class="icon-barcode"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card large">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="resources/img/logo.jpg" alt="Logo"/>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4 no-padding">Depart - arrival</p>
+                                        <p class="title is-6">249.99 EUR</p>
+                                        <p class="subtitle is-6">JetAir</p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam! Labore reprehenderit beatae magnam animi!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card large">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="resources/img/logo.jpg" alt="Logo"/>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4 no-padding">Depart - arrival</p>
+                                        <p class="title is-6">249.99 EUR</p>
+                                        <p class="subtitle is-6">JetAir</p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam! Labore reprehenderit beatae magnam animi!
                                 </div>
                             </div>
                         </div>

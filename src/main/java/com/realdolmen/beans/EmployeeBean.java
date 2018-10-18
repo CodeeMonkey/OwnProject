@@ -1,24 +1,38 @@
 package com.realdolmen.beans;
 
 import com.realdolmen.domain.EmployeeEntity;
-import com.realdolmen.service.EmployeeServiceBean;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.io.Serializable;
 import java.util.List;
 
 @Named
-@RequestScoped
-public class EmployeeBean {
+@SessionScoped
+public class EmployeeBean implements Serializable {
 
-    @Inject
-    EmployeeServiceBean employeeService;
+    @PersistenceContext
+    EntityManager em;
 
-    public EmployeeEntity save(EmployeeEntity employee){ return employeeService.save(employee); }
-    public EmployeeEntity findById(long employeeId){ return employeeService.findById(employeeId); }
-    public List<EmployeeEntity> findAll(){ return employeeService.findAll(); }
-    public void remove(long employeeId){ employeeService.remove(employeeId); }
+    //CRUDS
+    public EmployeeEntity save(EmployeeEntity employee) {
+        em.persist(employee);
+        return employee;
+    }
 
+    public EmployeeEntity findById(Long id) {
+        return em.find(EmployeeEntity.class, id);
+    }
+
+    public List<EmployeeEntity> findAll() {
+        return em.createQuery("select e from EmployeeEntity e", EmployeeEntity.class).getResultList();
+    }
+
+    public void remove(long employeeId) {
+        em.remove(em.getReference(EmployeeEntity.class, employeeId));
+    }
+    //END CRUDS
 
 }

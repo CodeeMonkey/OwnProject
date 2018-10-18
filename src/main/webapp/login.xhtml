@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <h:outputStylesheet library="css" name="index.css"/>
+    <title>TogethAir</title>
+    <!--<h:outputStylesheet library="bootstrap-3.3.6" name="css/bootstrap-jsf.css"/>-->
+</h:head>
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="pageContent">
+        <br/>
+        <h:form>
+            <p:messages for="btn" id="messages" showDetail="true" closable="true">
+                <p:autoUpdate />
+            </p:messages>
+            <div class="field form-group">
+                <p class="control has-icons-left has-icons-right">
+                    <h:inputText id="email" value="#{loginBean.emailInput}" styleClass="form-control input" a:placeholder="Email"
+                    required="true" requiredMessage="This field is empty, please enter your first email"/>
+                    <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+                    <h:message for="email" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-right"/>
+                </p>
+            </div>
+            <div class="field form-group">
+                <p class="control has-icons-left">
+                    <p:password id="password" value="#{loginBean.passwordInput}" styleClass="form-control input password-field"
+                                a:placeholder="Password" required="true" requiredMessage="This field is empty, please enter your first password"/>
+                    <h:message for="password" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                </p>
+            </div>
+            <div class="field form-group">
+                <div class="control">
+                    <h:commandButton id="btn" class="button" value="Login" action="#{loginBean.login}" update="class"/>
+                    <h:commandButton class="button" value="Register" immediate="true" action="register.xhtml"/>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

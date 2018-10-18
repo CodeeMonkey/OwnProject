@@ -1,33 +1,17 @@
 package com.realdolmen.domain;
 
-import javax.persistence.*;
-import java.util.Objects;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "partneremployee", schema = "realdolmen")
-public class PartnerEmployeeEntity {
+@DiscriminatorValue("P")
+@Table(name = "user", schema = "realdolmen")
+public class PartnerEmployeeEntity extends UserEntity {
 
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    @OneToOne
-    private PersonEntity person;
     @ManyToOne
     private AirlineEntity airline;
-
-    public long getId() {  return id; }
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public PersonEntity getPerson() {
-        return person;
-    }
-    public void setPerson(PersonEntity login) {
-        this.person = login;
-    }
 
     public AirlineEntity getAirline() {
         return airline;
@@ -36,18 +20,4 @@ public class PartnerEmployeeEntity {
         this.airline = airline;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        PartnerEmployeeEntity that = (PartnerEmployeeEntity) o;
-        return Objects.equals(person, that.person) &&
-                Objects.equals(airline, that.airline);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), person, airline);
-    }
 }

@@ -1,24 +1,39 @@
 package com.realdolmen.beans;
 
 import com.realdolmen.domain.BookedflightEntity;
-import com.realdolmen.service.BookedFlightServiceBean;
 
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Named
 @RequestScoped
 public class BookedFlightBean {
 
-    @Inject
-    BookedFlightServiceBean bookedFlightService;
+    @PersistenceContext
+    EntityManager em;
 
-    public BookedflightEntity save(BookedflightEntity bookedFlight){ return bookedFlightService.save(bookedFlight); }
-    public BookedflightEntity findById(long bookedFlightId){ return bookedFlightService.findById(bookedFlightId); }
-    public List<BookedflightEntity> findAll(){ return bookedFlightService.findAll(); }
-    public void remove(long bookedFlightId){ bookedFlightService.remove(bookedFlightId); }
+    //CRUDS
+    public BookedflightEntity save(BookedflightEntity bookedflight) {
+        em.persist(bookedflight);
+        return bookedflight;
+    }
+
+    public BookedflightEntity findById(Long id) {
+        return em.find(BookedflightEntity.class, id);
+    }
+
+    public List<BookedflightEntity> findAll() {
+        return em.createQuery("select p from BookedflightEntity p", BookedflightEntity.class).getResultList();
+    }
+
+    public void remove(long bookedflightId) {
+        em.remove(em.getReference(BookedflightEntity.class, bookedflightId));
+    }
+    //CRUDS
 
 
 }

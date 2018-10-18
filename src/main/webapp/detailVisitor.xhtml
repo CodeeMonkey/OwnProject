@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
+
+<h:head>
+    <title>TogethAir</title>
+</h:head>
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="pageContent">
+
+        <!-- SEARCH INFO -->
+        <section>
+            <div id="lastSearchContainer" class="box">
+                <h:form>
+                    <div id="searchButtonContainer">
+                        <button type="button" id="flights-search-button">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18"
+                                               height="18" class="" style="width: 1.5rem; height: 1.5rem;">
+                                    <path d="M20.6 18.4l-4.5-4.5c-.1-.1-.1-.1-.2-.1.7-1.1 1.1-2.4 1.1-3.8 0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7c1.4 0 2.7-.4 3.8-1.1l.1.2 4.5 4.5c.3.3.7.4 1.1.4s.8-.1 1.1-.4c.5-.6.5-1.6 0-2.2zM5 10c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5z"></path></svg>
+                                    </span>
+                        </button>
+                    </div>
+
+                    <div class="columns is-gapless is-multiline ">
+                        <div class="column is-inline-block">
+                            <p>#{searchView.selectedSchedule.departureAirtportFK.airportName} (#{searchView.selectedSchedule.departureAirtportFK.airportcode}) - #{searchView.selectedSchedule.arrivalAirtportFK.airportName} (#{searchView.selectedSchedule.arrivalAirtportFK.airportcode})</p>
+                            <p><span
+                                    class="travellers">#{searchView.passengers} #{msgs['flight.passenger.adults']}</span>#{searchView.classChoice} class
+                            </p>
+                        </div>
+                        <div class="column is-inline-block searchDate">
+                            <div class="text-nowrap">
+                                <p:outputLabel for="startDate" value="#{msgs['calendar.start']}"
+                                               styleClass="customflight-label"/>
+                                <p:outputLabel id="startDate" styleClass="customflight-input"
+                                               value="#{searchView.departureDate}">
+                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                </p:outputLabel>
+                            </div>
+                            <c:if test="#{searchView.retour}">
+                                <div class="text-nowrap">
+                                    <p:outputLabel for="endDate" value="#{msgs['calendar.end']}"
+                                                   styleClass="customflight-label"/>
+                                    <p:outputLabel id="endDate" inputStyleClass="customflight-input"
+                                                   value="#{schedule.destinationDate}"
+                                                   mindate="#{searchView.departureDate}">
+                                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                        <p:ajax event="dateSelect" listener="#{searchView.onDateSelect}"/>
+                                    </p:outputLabel>
+                                </div>
+                            </c:if>
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+        </section>
+
+
+        <section class="half-section">
+            <h:form>
+
+                <!-- STEPS -->
+                <ul class="steps is-horizontal is-medium is-centered has-content-centered">
+                    <li class="steps-segment">
+                        <p:link outcome="resultsVisitor" styleClass="has-text-dark">
+                                    <span class="steps-marker">
+                                        <span class="icon"><i class="fa fa-inverse fa-plane"></i>
+                                        </span>
+                                    </span>
+                            <div class="steps-content">
+                                <p class="heading">#{msgs['flights']}</p>
+                            </div>
+                        </p:link>
+                    </li>
+                    <li class="steps-segment is-active has-gaps">
+                                    <span class="steps-marker">
+                                        <span class="icon"><i class="fa fa-inverse fa-check"></i>
+                                        </span>
+                                    </span>
+                        <div class="steps-content">
+                            <p class="heading">#{msgs['confirmation']}</p>
+                        </div>
+                    </li>
+                    <li class="steps-segment">
+                                <span class="steps-marker is-hollow">
+                                  <span class="icon">
+                                    <i class="fa fa-credit-card"></i>
+                                  </span>
+                                </span>
+                        <div class="steps-content">
+                            <p class="heading">#{msgs['payment']}</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- BOX DETAILVIEW -->
+                <div class="box no-padding">
+                    <div id="heroTitle" class="hero is-small">
+                        <div class="hero-body">
+                            <div class="container">
+                                <h2 class="subtitle">
+                                    #{msgs['flight.detail']}
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-container">
+                        <div class="grid-item align-right-grid is-bold evenrows"><h:outputText
+                                value="#{msgs['location.departure']}: "/></div>
+                        <div class="grid-item align-left-grid evenrows"><h:outputText
+                                value="#{searchView.selectedSchedule.departureAirtportFK.cityName}"
+                                styleClass="outputLabel"/></div>
+
+                        <div class="grid-item align-right-grid is-bold unevenrows"><h:outputText
+                                value="#{msgs['location.destination']}: "/></div>
+                        <div class="grid-item align-left-grid unevenrows"><h:outputText
+                                value="#{searchView.selectedSchedule.arrivalAirtportFK.cityName}"
+                                styleClass="outputLabel"/></div>
+
+                        <div class="grid-item align-right-grid is-bold evenrows"><h:outputText
+                                value="Number of seats: "/></div>
+                        <div class="grid-item align-left-grid evenrows"><h:outputText value="#{searchView.passengers}"
+                                                                                      styleClass="outputLabel"/>
+                        </div>
+
+                        <div class="grid-item align-right-grid is-bold unevenrows"><h:outputText
+                                value="Travelling class: "/></div>
+                        <div class="grid-item align-left-grid unevenrows"><h:outputText
+                                value="#{searchView.classChoice} class"
+                                styleClass="outputLabel"/></div>
+
+                        <div class="grid-item align-right-grid is-bold evenrows"><h:outputText
+                                value="#{msgs['flight.departure.time']}: "/></div>
+                        <div class="grid-item align-left-grid evenrows">
+                            <h:outputText styleClass="outputLabel"
+                                          value="#{searchView.selectedSchedule.departureTime}">
+                                <f:convertDateTime pattern="HH:mm a"/>
+                            </h:outputText>
+                        </div>
+
+                        <div class="grid-item align-right-grid is-bold unevenrows"><h:outputText
+                                value="#{msgs['flight.arrival.time']}: "/></div>
+                        <div class="grid-item align-left-grid unevenrows">
+                            <h:outputText styleClass="outputLabel"
+                                          value="#{searchView.selectedSchedule.arrivalTime}">
+                                <f:convertDateTime pattern="HH:mm a"/>
+                            </h:outputText>
+                        </div>
+
+                        <div class="grid-item align-right-grid is-bold evenrows"><h:outputText
+                                value="#{msgs['flight.time']}: "/></div>
+                        <div class="grid-item align-left-grid evenrows"><h:outputText
+                                value="#{searchView.selectedSchedule.calculateTravelHoursBetweenFlights(searchView.selectedSchedule.departureTime, searchView.selectedSchedule.arrivalTime)}"
+                                styleClass="outputLabel"/></div>
+
+                        <div class="grid-item align-right-grid is-bold unevenrows"><h:outputText
+                                value="#{msgs['flight.airline.company']}: "/></div>
+                        <div class="grid-item align-left-grid unevenrows">
+                            <img class="AirlineLogo"
+                                 src="#{searchView.selectedSchedule.aircraftFK.airlineFK.imageUrl}"
+                                 width="auto" height="auto"
+                                 title="#{searchView.selectedSchedule.aircraftFK.airlineFK.name}"
+                                 alt="#{searchView.selectedSchedule.aircraftFK.airlineFK.name}"/>
+                            <h:outputText value="#{searchView.selectedSchedule.aircraftFK.airlineFK.name}"
+                                          styleClass="outputLabel"/>
+                        </div>
+
+                        <c:if test="#{searchView.selectedSchedule.discountHighest > 0}">
+                            <div class="grid-item align-right-grid is-bold evenrows"><h:outputText value="Old Price: "/>
+                            </div>
+                            <div class="grid-item align-left-grid evenrows"><h:outputText
+                                    value="#{searchView.calculateOldPrice(searchView.selectedSchedule)}"
+                                    styleClass="outputLabel"/></div>
+
+                            <div class="grid-item align-right-grid is-bold unevenrows"><h:outputText value="Discount: "/>
+                            </div>
+                            <div class="grid-item align-left-grid unevenrows"><h:outputText
+                                    value="-#{searchView.selectedSchedule.discountHighest}%"
+                                    styleClass="outputLabel"/></div>
+                        </c:if>
+
+
+                        <div class="grid-item"/>
+                        <div class="grid-item">
+                            <div class="column is-12-mobile">
+                                <p class="currency-format align-right is-mobile-float-none">€ #{searchView.selectedSchedule.totalPrice}</p>
+                            </div>
+                        </div>
+
+                        <div class="grid-item"/>
+                        <div class="grid-item">
+                            <p:commandButton action="#{bookingFlowBean.prepare()}" value="#{msgs['links.booknow']}"
+                                      iconPos="right" icon="fa fa-fw fa-arrow-right"
+                                      styleClass="button select-flight-button align-right">
+                                <f:param name="travelId" value="666"/>
+                            </p:commandButton>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </h:form>
+        </section>
+
+
+    </ui:define>
+</ui:composition>
+
+</html>

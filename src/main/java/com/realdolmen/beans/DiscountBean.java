@@ -1,28 +1,36 @@
 package com.realdolmen.beans;
 
 import com.realdolmen.domain.DiscountEntity;
-import com.realdolmen.service.DiscountServiceBean;
 
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Named
 @RequestScoped
 public class DiscountBean {
 
-    @Inject
-    DiscountServiceBean discountService;
+    @PersistenceContext
+    EntityManager em;
 
-    public DiscountEntity save(DiscountEntity discount){ return discountService.save(discount); }
-    public DiscountEntity findById(long discountId){ return discountService.findById(discountId); }
-    public List<DiscountEntity> findAll(){
-        return discountService.findAll();
-    }
-    public void remove(long discountId){
-        discountService.remove(discountId);
+    //CRUDS
+    public DiscountEntity save(DiscountEntity discount) {
+        em.persist(discount);
+        return discount;
     }
 
+    public DiscountEntity findById(Long id) {
+        return em.find(DiscountEntity.class, id);
+    }
 
+    public List<DiscountEntity> findAll() {
+        return em.createQuery("select p from DiscountEntity p", DiscountEntity.class).getResultList();
+    }
+
+    public void remove(long discountId) {
+        em.remove(em.getReference(DiscountEntity.class, discountId));
+    }
+    //CRUDS
 }

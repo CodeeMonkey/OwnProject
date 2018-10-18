@@ -1,30 +1,49 @@
 package com.realdolmen.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table(name = "bookedflight", schema = "realdolmen")
+@NamedQueries({
+        @NamedQuery(name = BookedflightEntity.SEARCH_ALL_BOOKEDFLIGHTS,
+                query = "select b from BookedflightEntity b where b.userFK.id = :userId")
+})
 public class BookedflightEntity {
+    public final static String SEARCH_ALL_BOOKEDFLIGHTS= "BookedFlight.Query.ALL";
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column(name = "pricePaid")
     private Double pricePaid;
+
     @Column
     private int seatsBooked;
+
+    @NotEmpty
+    @Column(name = "payMethod")
+    private String payMethod;
+
+    @Column(name = "paymentStatus")
+    private String payStatus;
+
     @Column(name = "cancelled")
     private boolean cancelled;
 
     @ManyToOne
-    private SheduleEntity sheduleFK;//Each schedule can have many booked Flights
-    @ManyToMany
-    private Set<UserEntity> userFK;//Each booked flight can have many Persons, each Person can have many booked flights
+    private ScheduleEntity sheduleFK;//Each schedule can have many booked Flights
 
+    @ManyToOne
+    private CustomerEntity userFK;//Each booked flight can have many Persons, each Person can have many booked flights
+
+    @Version
+	@Column(name="version")
+	private Integer version;
 
     public long getId() {
         return id;
@@ -48,24 +67,29 @@ public class BookedflightEntity {
         this.cancelled = cancelled;
     }
 
-    public SheduleEntity getSheduleFK() { return sheduleFK; }
-    public void setSheduleFK(SheduleEntity sheduleFK) { this.sheduleFK = sheduleFK; }
+    public ScheduleEntity getSheduleFK() { return sheduleFK; }
+    public void setSheduleFK(ScheduleEntity sheduleFK) { this.sheduleFK = sheduleFK; }
 
-    public Set<UserEntity> getUserFK() { return userFK; }
-    public void setUserFK(Set<UserEntity> userFK) { this.userFK = userFK; }
+    public CustomerEntity getUserFK() { return userFK; }
+    public void setUserFK(CustomerEntity userFK) { this.userFK = userFK; }
+
+    public String getPayMethod() { return payMethod; }
+    public void setPayMethod(String payMethod) { this.payMethod = payMethod; }
+
+    public String getPayStatus() { return payStatus; }
+    public void setPayStatus(String payStatus) { this.payStatus = payStatus; }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BookedflightEntity that = (BookedflightEntity) o;
-        return id == that.id &&
-                cancelled == that.cancelled &&
+        return  cancelled == that.cancelled &&
                 Objects.equals(pricePaid, that.pricePaid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, pricePaid, cancelled);
+        return Objects.hash(pricePaid, cancelled);
     }
 }

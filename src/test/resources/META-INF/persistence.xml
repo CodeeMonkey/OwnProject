@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	<persistence-unit name="TestProjectDS"
+		transaction-type="JTA">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<jta-data-source>java:/rd/datasources/RealDolmenDataSource</jta-data-source>
+
+		<!-- Entity Classes -->
+<!-- 		<class>com.realdolmen.domain.AircraftEntity</class> -->
+		<class>com.realdolmen.domain.AirlineEntity</class>
+<!-- 		<class>com.realdolmen.domain.AirportEntity</class>
+		<class>com.realdolmen.domain.BookedflightEntity</class>
+		<class>com.realdolmen.domain.DiscountEntity</class>
+		<class>com.realdolmen.domain.ScheduleEntityy</class>
+		<class>com.realdolmen.domain.UserEntity</class>
+		<class>com.realdolmen.domain.PriceChangeEntity</class>
+		<class>com.realdolmen.domain.PartnerEmployeeEntity</class>
+		<class>com.realdolmen.domain.EmployeeEntity</class>
+		<class>com.realdolmen.domain.LoginEntity</class> -->
+
+		<properties>
+
+			<property
+				name="javax.persistence.schema-generation.database.action"
+				value="drop-and-create" />
+			<property name="javax.persistence.sql-load-script-source"
+				value="META-INF/sql/test-data.sql" />
+
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/realdolmen-test" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+
+
+		</properties>
+
+	</persistence-unit>
+
+
+	<!-- Automatic schema export has been deliberately disabled. When you want 
+		to reload your dataschema, run a persistence unit test. Otherwise all your 
+		data will disappear whenever you restart Wildfly. -->
+
+</persistence>

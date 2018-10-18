@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+>
+
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <h:outputStylesheet library="css" name="index.css"/>
+    <title>TogethAir</title>
+</h:head>
+
+<ui:composition template="/template.xhtml">
+    <ui:define name="pageContent">
+        <p:tabView>
+            <p:tab id="airlineTab" title="Airlines">
+                <div class="row columns">
+                    <div class="column is-half">
+                        <div class="hero is-small backgroundGreen">
+                            <div class="hero-body">
+                                <div class="container">
+                                    <h2 class="subtitle">
+                                        Airline Information
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="airlineList" class="table is-responsive">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <!--<th>Remove</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <ui:repeat var="airline" value="#{airlineBean.findAll()}">
+                                <tr>
+                                    <td><h:inputText value="#{airline.name}" styleClass="inputOutputText"/></td>
+                                    <td><h:inputText value="#{airline.code}" styleClass="inputOutputText"/></td>
+                                </tr>
+                            </ui:repeat>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="column is-half">
+                        <div class="hero is-small backgroundGreen">
+                            <div class="hero-body">
+                                <div class="container">
+                                    <h2 class="subtitle">
+                                        Create new airline
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <h:form>
+                            <p:messages for="btn" id="messages" showDetail="true" closable="true">
+                                <p:autoUpdate/>
+                            </p:messages>
+                            <div class="field form-group">
+                                <p class="control has-icons-left has-icons-right">
+                                    <h:inputText id="airlineName" value="#{airlineBean.airlineName}"
+                                                 styleClass="form-control input" a:placeholder="airline name"
+                                                 required="true" requiredMessage="This field is empty"/>
+                                    <span class="icon is-small is-left"><i class="fa fa-plane"></i></span>
+                                    <h:message for="airlineName" errorClass="control-label has-error"/>
+                                    <span class="icon is-small is-right"/>
+                                </p>
+                            </div>
+                            <div class="field form-group">
+                                <p class="control has-icons-left">
+                                    <h:inputText id="airlineCode" value="#{airlineBean.airlineCode}"
+                                                 styleClass="form-control input" a:placeholder="airline code"
+                                                 required="true" requiredMessage="This field is empty"/>
+                                    <h:message for="airlineCode" errorClass="control-label has-error"/>
+                                    <span class="icon is-small is-left"><i class="fa fa-barcode"></i></span>
+                                </p>
+                            </div>
+                            <div class="field form-group">
+                                <div class="control">
+                                    <p:commandButton id="btn" class="button" value="Create airline"
+                                                     actionListener="#{airlineBean.createAirline()}"
+                                                     process="@form"
+                                                     update="@all"/>
+                                </div>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+
+            </p:tab>
+            <p:tab title="Airports">
+                <div class="row columns">
+                    <div class="column is-full">
+                        <div class="hero is-small backgroundGreen">
+                            <div class="hero-body">
+                                <div class="container">
+                                    <h2 class="subtitle">
+                                        Airports Information
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="airportList" class="table is-responsive">
+                            <thead>
+                            <tr>
+                                <th>Airport name</th>
+                                <th>Airport code</th>
+                                <th>City name</th>
+                                <th>City code</th>
+                                <th>Country name</th>
+                                <th>Country code</th>
+                                <th>Global Region Location</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <ui:repeat var="airport" value="#{airportBean.findAll()}">
+                                <tr>
+                                    <td><h:outputText value="#{airport.airportName}" /></td>
+                                    <td><h:outputText value="#{airport.airportcode}" /></td>
+                                    <td><h:outputText value="#{airport.cityName}" /></td>
+                                    <td><h:outputText value="#{airport.cityCode}" /></td>
+                                    <td><h:outputText value="#{airport.countryName}" /></td>
+                                    <td><h:outputText value="#{airport.countryCode}" /></td>
+                                    <td><h:outputText value="#{airport.globalRegionLocation}" /></td>
+                                </tr>
+                            </ui:repeat>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </p:tab>
+        </p:tabView>
+    </ui:define>
+</ui:composition>
+</html>

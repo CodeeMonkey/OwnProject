@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+
+<h:head>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+</h:head>
+
+<h:body>
+
+    <section class="hero is-medium is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title">
+                    We're sorry
+                </h2>
+                <h4 class="subtitle">
+                    Something went wrong
+                </h4>
+                <h4 class="subtitle">
+                    Please hit the back button
+                </h4>
+                <h:form>
+                    <h:commandLink styleClass="btn btn-default" onclick="window.history.back();" value="#{msgs['links.goback']}"
+                                   >
+                        <i class="fa fa-arrow-left"/>
+                    </h:commandLink>
+
+                    <div class="align-left margin"> OR </div>
+
+                    <h:commandLink action="index" styleClass="btn btn-default" value="#{msgs['links.home']}">
+                        <i class="fa fa-home"/>
+                    </h:commandLink>
+                </h:form>
+            </div>
+        </div>
+    </section>
+
+</h:body>
+</html>

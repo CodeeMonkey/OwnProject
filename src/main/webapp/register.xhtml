@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <h:outputStylesheet library="css" name="index.css"/>
+    <title>TogethAir</title>
+</h:head>
+<ui:composition template="/template.xhtml">
+    <ui:define name="pageContent">
+        <br/>
+        <h:form>
+            <p:messages for="btn" id="messages" showDetail="true" closable="true">
+                <p:autoUpdate />
+            </p:messages>
+            <div class="field form-group">
+                <p class="control has-icons-left has-icons-right">
+                    <h:inputText id="firstName" value="#{customerBean.firstName}" styleClass="form-control input" a:placeholder="First name" required="true"
+                                 requiredMessage="This field is empty, please enter your first name">
+                    </h:inputText>
+                    <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
+                    <h:message for="firstName" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-right"/>
+                </p>
+            </div>
+            <div class="field form-group">
+                <p class="control has-icons-left has-icons-right">
+                    <h:inputText id="lastName" value="#{customerBean.lastName}" styleClass="form-control input" a:placeholder="Last name" required="true"
+                                 requiredMessage="This field is empty, please enter your last name"/>
+                    <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
+                    <h:message for="lastName" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-right"/>
+                </p>
+            </div>
+            <div class="field form-group">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-calendar"></i></span>
+                    <p:calendar id="birthDate" value="#{customerBean.birthDate}" placeholder="Birthdate" styleClass="form-control input" required="true"
+                                requiredMessage="This field is empty, please enter your birthdate"/>
+                    <br/>
+                    <h:message for="birthDate" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-right"/>
+                </div>
+            </div>
+            <div class="field form-group">
+                <p class="control has-icons-left has-icons-right">
+                    <h:inputText id="country" value="#{customerBean.country}" styleClass="form-control input" a:placeholder="Nationality"
+                                 required="true" requiredMessage="This field is empty, please enter your nationality"/>
+                    <span class="icon is-small is-left"><i class="fa fa-globe"></i></span>
+                    <h:message for="country" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-right"/>
+                </p>
+            </div>
+            <div class="field form-group">
+                <p class="control has-icons-left has-icons-right">
+                    <h:inputText id="mobilePhone" value="#{customerBean.phoneNumber}" styleClass="form-control input" a:placeholder="Phone number"
+                                 required="true" requiredMessage="This field is empty, please enter your phone number"/>
+                    <span class="icon is-small is-left"><i class="fa fa-phone"></i></span>
+                    <h:message for="mobilePhone" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-right"/>
+                </p>
+            </div>
+            <div class="field form-group">
+                <p class="control has-icons-left has-icons-right">
+                    <h:inputText id="email" value="#{customerBean.email}" styleClass="form-control input" a:placeholder="Email" required="true"
+                                 requiredMessage="This field is empty, please enter your email"/>
+                    <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+                    <h:message for="email" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-right"/>
+                </p>
+            </div>
+            <div class="field form-group">
+                <p class="control has-icons-left">
+                    <p:password id="password" value="#{customerBean.password1}" styleClass="form-control input password-field" a:placeholder="Password"
+                                required="true" requiredMessage="This field is empty, please enter your password"/>
+                    <h:message for="password" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                </p>
+            </div>
+            <div class="field form-group">
+                <p class="control has-icons-left">
+                    <p:password id="passwordCheck" value="#{customerBean.password2}" styleClass="form-control input password-field" a:placeholder="Repeat password"
+                    required="true" requiredMessage="This field is empty, please repeat your password"/>
+                    <h:message for="passwordCheck" errorClass="control-label has-error"/>
+                    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                </p>
+            </div>
+            <div class="field form-group">
+                <div class="control">
+                    <h:commandButton class="button" value="Register" action="#{customerBean.register}"/>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

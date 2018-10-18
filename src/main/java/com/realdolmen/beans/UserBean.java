@@ -1,24 +1,42 @@
 package com.realdolmen.beans;
 
 import com.realdolmen.domain.UserEntity;
-import com.realdolmen.service.UserServiceBean;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import javax.ejb.Stateful;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.io.Serializable;
 import java.util.List;
 
 @Named
-@RequestScoped
-public class UserBean {
+@SessionScoped
+@Stateful
+public class UserBean implements Serializable {
 
-    @Inject
-    UserServiceBean userService;
+    @PersistenceContext
+    EntityManager em;
 
-    public UserEntity save(UserEntity user){ return userService.save(user); }
-    public UserEntity findById(long userId){ return userService.findById(userId); }
-    public List<UserEntity> findAll(){ return userService.findAll(); }
-    public void remove(long userId){ userService.remove(userId); }
+    //CRUDS
+    public UserEntity save(UserEntity user) {
+        em.persist(user);
+        return user;
+    }
+
+    public UserEntity findById(Long id) {
+        return em.find(UserEntity.class, id);
+    }
+
+    public List<UserEntity> findAll() {
+        return em.createQuery("select p from UserEntity p", UserEntity.class).getResultList();
+    }
+
+    public void remove(long userId) {
+        em.remove(em.getReference(UserEntity.class, userId));
+    }
+    //END CRUDS
+
 
 
 }

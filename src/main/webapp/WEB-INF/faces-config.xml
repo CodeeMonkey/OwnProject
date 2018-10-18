@@ -18,4 +18,21 @@
         <message-bundle>ErrorMessages</message-bundle>
     </application>
 
+    <flow-definition id="bookFlight">
+        <start-node>detailVisitorStart</start-node>
+
+            <view id="detailVisitorStart">
+                <vdl-document>resultsVisitor.xhtml</vdl-document>
+            </view>
+
+
+
+    </flow-definition>
+
+    <factory>
+        <exception-handler-factory>
+            com.realdolmen.Exceptions.CustomExceptionHandlerFactory
+        </exception-handler-factory>
+    </factory>
+
 </faces-config>

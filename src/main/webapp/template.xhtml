@@ -3,92 +3,77 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:t="http://xmlns.jcp.org/jsf/composite/tags">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
 
 <f:view locale="#{languageSwitcher.locale}">
     <h:head>
         <meta charset="UTF-8"/>
         <title>#{msgs['page.template.title']}</title>
 
-        <!--<h:outputScript library="bootstrap-3.3.6" name="/js/bootstrap.js"/>-->
-        <h:outputScript library="css" name="/bulma-0.7.1/css/bulma.min.css"/>
-        <h:outputScript library="js" name="bulma.js"/>
-        <ui:insert name="customScripts"/>
-
-        <!--<h:outputStylesheet library="bootstrap-3.3.6" name="/css/bootstrap-jsf.css"/>-->
-        <h:outputStylesheet library="css" name="index.css"/>
         <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'/>
+        <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/octoshrimpy/bulma-o-steps/master/bulma-steps.css'/>
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
 
+        <h:outputStylesheet library="css" name="all.css"/>
+        <ui:insert name="customScripts"/>
         <ui:insert name="customStylesheets"/>
     </h:head>
     <h:body>
         <!-- START NAV -->
-        <nav class="navbar">
+        <nav class="navbar arrow">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="index.xhtml">
-
-                        <img src="resources/img/logo.jpg" alt="Logo"/>
+                        <img src="resources/img/logo_resized.jpg" alt="Logo"/>
+                        <h1 class="pagelogo">#{msgs['page.index.title']}</h1>
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
                         <span></span>
                         <span></span>
-                        </span>
+                    </span>
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item is-active">
-                            Home
-                        </a>
-                        <a class="navbar-item">
-                            Info
-                        </a>
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link">
-                                Account
-                            </a>
-                            <div class="navbar-dropdown">
-                                <a class="navbar-item">
-                                    Dashboard
-                                </a>
-                                <a class="navbar-item">
-                                    Profile
-                                </a>
-                                <a class="navbar-item">
-                                    Settings
-                                </a>
-                                <hr class="navbar-divider"/>
-                                <div class="navbar-item">
-                                    Logout
-                                </div>
-                            </div>
-                        </div>
+
+                        <h:link class="navbar-item" outcome="index">Home</h:link>
+                        <c:if test="#{currentUserBean.isCustomer()}">
+                            <h:link class="navbar-item" outcome="account">#{msgs['links.account']}</h:link>
+                        </c:if>
+                        <c:if test="#{currentUserBean.isEmployee()}">
+                            <h:link class="navbar-item" outcome="employee">Employee page</h:link>
+                        </c:if>
+                        <c:if test="#{currentUserBean.isPartnerEmployee()}">
+                            <h:link class="navbar-item" outcome="index">I"m a partner</h:link>
+                        </c:if>
+                        <c:if test="#{currentUserBean.isNotLoggedIn()}">
+                            <h:link class="navbar-item" outcome="login">#{msgs['links.login']}</h:link>
+                            <h:link class="navbar-item" outcome="register">#{msgs['links.register']}</h:link>
+                        </c:if>
+                        <c:if test="#{currentUserBean.isLoggedIn()}">
+                            <h:form id="myCustomForm" style="display: flex">
+                            <h:commandLink class="navbar-item" outcome="index" action="#{currentUserBean.logOut()}">#{msgs['links.logout']}</h:commandLink>
+                            </h:form>
+                        </c:if>
                         <div class="navbar-item has-dropdown is-hoverable">
                             <a class="navbar-link">
                                 Language
                             </a>
                             <h:form id="language_form">
-                            <div class="navbar-dropdown">
-                                <a class="navbar-item">
-                                    <h:commandLink value="#{msgs['language.en']}">
-                                    <f:ajax render="@all" listener="#{languageSwitcher.changeLanguage('en')}"/>
-                                    </h:commandLink> |
-                                </a>
-                                <a class="navbar-item">
-                                    <h:commandLink value="#{msgs['language.fr']}">
-                                    <f:ajax render="@all" listener="#{languageSwitcher.changeLanguage('fr')}"/>
-                                    </h:commandLink> |
-                                </a>
-                                <a class="navbar-item">
-                                    <h:commandLink value="#{msgs['language.nl']}">
-                                    <f:ajax render="@all" listener="#{languageSwitcher.changeLanguage('nl')}"/>
+                                <div class="navbar-dropdown">
+                                    <h:commandLink class="navbar-item" value="#{msgs['language.en']}">
+                                        <f:ajax render="@all" listener="#{languageSwitcher.changeLanguage('en')}"/>
                                     </h:commandLink>
-                                </a>
-                            </div>
+
+                                    <h:commandLink class="navbar-item" value="#{msgs['language.fr']}">
+                                        <f:ajax render="@all" listener="#{languageSwitcher.changeLanguage('fr')}"/>
+                                    </h:commandLink>
+
+                                    <h:commandLink class="navbar-item" value="#{msgs['language.nl']}">
+                                        <f:ajax render="@all" listener="#{languageSwitcher.changeLanguage('nl')}"/>
+                                    </h:commandLink>
+                                </div>
                             </h:form>
 
                         </div>
@@ -107,8 +92,6 @@
                 </div>
             </div>
         </nav>
-
-
 
         <div class="row">
         <div class="container">
@@ -129,18 +112,19 @@
         <footer class="footer">
             <div class="container">
                 <div class="content has-text-centered">
-                    <div class="soc">
-                        <a href="#"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
-                    </div>
+                    <!--<div class="soc">-->
+                        <!--<a href="#"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>-->
+                        <!--<a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>-->
+                        <!--<a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>-->
+                        <!--<a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>-->
+                    <!--</div>-->
                     <p>
                         TogethAir Company
                     </p>
                 </div>
             </div>
         </footer>
+        <h:outputScript library="js" name="bulma.js"/>
     </h:body>
 </f:view>
 </html>

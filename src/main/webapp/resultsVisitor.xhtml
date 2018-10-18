@@ -4,201 +4,169 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:t="http://xmlns.jcp.org/jsf/composite/tags">
+      xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
 
 <h:head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <h:outputStylesheet library="css" name="index.css"/>
     <title>TogethAir</title>
-    <!--<h:outputStylesheet library="bootstrap-3.3.6" name="css/bootstrap-jsf.css"/>-->
 </h:head>
 
 <ui:composition template="/template.xhtml">
     <ui:define name="pageContent">
 
-        <div class="container">
-            <div id="flow">
-                <span class="flow-1"></span>
-                <span class="flow-2"></span>
-                <span class="flow-3"></span>
+        <section>
+            <div id="lastSearchContainer" class="box">
+                <h:form>
+                    <div id="searchButtonContainer">
+                        <button type="button" id="flights-search-button">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18"
+                                               height="18" class="" style="width: 1.5rem; height: 1.5rem;">
+                                    <path d="M20.6 18.4l-4.5-4.5c-.1-.1-.1-.1-.2-.1.7-1.1 1.1-2.4 1.1-3.8 0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7c1.4 0 2.7-.4 3.8-1.1l.1.2 4.5 4.5c.3.3.7.4 1.1.4s.8-.1 1.1-.4c.5-.6.5-1.6 0-2.2zM5 10c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5z"></path></svg>
+                                    </span>
+                        </button>
+                    </div>
+
+                    <div class="columns is-gapless is-multiline ">
+                        <div class="column is-inline-block">
+                            <p>#{searchView.departureAirport.airportName} (#{searchView.departureAirport.airportcode}) - #{searchView.destinationAirport.airportName} (#{searchView.destinationAirport.airportcode})</p>
+                            <p><span
+                                    class="travellers">#{searchView.passengers} #{msgs['flight.passenger.adults']}</span>#{searchView.classChoice} #{msgs['flight.class.class']}
+                            </p>
+                        </div>
+                        <div class="column is-inline-block searchDate">
+                            <div class="text-nowrap">
+                                <p:outputLabel for="startDate" value="#{msgs['calendar.start']}"
+                                               styleClass="customflight-label"/>
+                                <p:calendar id="startDate" inputStyleClass="customflight-input"
+                                            value="#{searchView.departureDate}">
+                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                    <p:ajax event="dateSelect" listener="#{searchView.onDateSelect}"/>
+                                </p:calendar>
+                            </div>
+                            <c:if test="#{searchView.retour}">
+                                <div class="text-nowrap">
+                                    <p:outputLabel for="endDate" value="#{msgs['calendar.end']}"
+                                                   styleClass="customflight-label"/>
+                                    <p:calendar id="endDate" inputStyleClass="customflight-input"
+                                                value="#{searchView.destinationDate}"
+                                                mindate="#{searchView.departureDate}">
+                                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                        <p:ajax event="dateSelect" listener="#{searchView.onDateSelect}"/>
+                                    </p:calendar>
+                                </div>
+                            </c:if>
+                        </div>
+                    </div>
+                </h:form>
             </div>
+        </section>
+        <section class="half-section">
+            <h:form>
+                <div class="columns">
 
-            <section class="container box">
-                <div class="searchButtonContainer">
-                    <button type="button" id="flights-search-button">
-                        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
-                             class="" style="width: 1.125rem; height: 1.125rem;">
-                            <path d="M20.6 18.4l-4.5-4.5c-.1-.1-.1-.1-.2-.1.7-1.1 1.1-2.4 1.1-3.8 0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7c1.4 0 2.7-.4 3.8-1.1l.1.2 4.5 4.5c.3.3.7.4 1.1.4s.8-.1 1.1-.4c.5-.6.5-1.6 0-2.2zM5 10c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5z"></path></svg>
-                        </span>
-                    </button>
-                </div>
-                <div class="searchDetails">
-                    <div class="searchDetails">
-                        <p>Brussels (Any) - Barcelona (Any)</p>
-                        <p><span class="travellers">1 adult</span>Economy</p>
-                    </div>
-                    <nav class="searchDate">
 
-                    </nav>
-                </div>
-            </section>
+                    <!-- FILTER BOX -->
+                    <div class="column is-3">
 
-            <div class="section">
-                <div class="box">
-                    <div class="field has-addons">
-                        <h:form>
-                            <p:outputLabel for="event" value="" />
-                            <p:calendar id="event" value="#{calendarView.date4}">
-                                <p:ajax event="dateSelect" listener="#{calendarView.onDateSelect}" update="msgs" mindate="#{bean.currentDate}" />
-                            </p:calendar>
+                        <p:accordionPanel multiple="true" activeIndex="0,1" styleClass="accordion ui-accordion-header">
+                            <p:tab title="#{msgs['flight.class']}" titleStyleClass="custom-accordiontab">
+                                <h:panelGrid columns="2">
+                                    <p:selectManyCheckbox id="seatClassSelects" value="#{searchView.selectedSeatClasses}" columns="1" layout="pageDirection">
+                                        <f:selectItems value="#{searchView.seatClasses}" var="seat" itemLabel="#{seat}" itemValue="#{seat}" styleClass="littlemargin"/>
+                                        <p:ajax event="change" process="@form" update="@form" listener="#{searchView.filterResults}"/>
+                                    </p:selectManyCheckbox>
 
-                            <p:outputLabel for="event" value="" />
-                            <p:calendar id="event2" value="#{calendarView.date5}">
-                                <p:ajax event="dateSelect" listener="#{calendarView.onDateSelect}" update="msgs" mindate="#{bean.currentDate}" />
-                            </p:calendar>
-                        </h:form>
+                                </h:panelGrid>
+                            </p:tab>
+                            <p:tab title="#{msgs['flight.airline']}" titleStyleClass="custom-accordiontab">
+                                <h:panelGrid columns="2">
+
+                                    <p:selectManyCheckbox id="airlineSelects" value="#{searchView.selectedAirlines}" columns="1" layout="pageDirection">
+                                        <f:selectItems value="#{searchView.airlines}" var="airline" itemLabel="#{airline}" itemValue="#{airline}" styleClass="littlemargin"/>
+                                        <p:ajax event="change" process="@form" update="@form" listener="#{searchView.filterResults}" />
+                                    </p:selectManyCheckbox>
+
+                                   </h:panelGrid>
+                            </p:tab>
+                        </p:accordionPanel>
                     </div>
-                </div>
-                <!-- Content -->
-                <div class="row columns">
-                    <div class="column is-one-third">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="resources/img/logo.jpg" alt="Logo"/>
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-96x96">
-                                            <img src="https://i.imgsafe.org/a4/a4bb9acc5e.jpeg" alt="Image"/>
-                                        </figure>
+
+
+                    <!-- FLIGHT RESULT BOXES-->
+                    <div class="column is-9">
+
+                        <p:outputPanel rendered="#{searchView.filteredSchedules eq null}">
+
+                            No results found
+
+                        </p:outputPanel>
+
+                        <c:forEach items="#{searchView.filteredSchedules}" var="schedule">
+                            <div class="box">
+                                <div class="columns">
+                                    <div class="column is-three-quarters">
+                                        <div class="columns">
+                                            <div class="column is-3 is-3-tablet is-3-mobile is-mobile-float-left">
+                                                <div class="big-logo-flight">
+                                                    <img class="AirlineLogo"
+                                                         src="#{schedule.aircraftFK.airlineFK.imageUrl}"
+                                                         width="auto" height="auto" title="#{schedule.aircraftFK.airlineFK.name}"
+                                                         alt="#{schedule.aircraftFK.airlineFK.name}"/>
+                                                </div>
+                                            </div>
+                                            <div class="column is-2 is-2-tablet is-2-mobile is-mobile-float-left">
+                                                <div class="depart">
+                                                    <span class="date-format align-right">
+                                                         <h:outputText inputStyleClass="customflight-input-label"
+                                                                       value="#{schedule.departureTime}">
+                                                             <f:convertDateTime pattern="HH:mm a"/>
+                                                        </h:outputText>
+                                                    </span>
+                                                    <span class="city-format align-right">#{schedule.departureAirtportFK.cityCode}</span>
+                                                </div>
+                                            </div>
+                                            <div class="column is-5 is-5-tablet is-4-mobile is-mobile-float-left no-padding">
+                                                <div class="flight-stops">
+                                                    <span class="flightInfo_duration flight_anim-enabled">#{schedule.calculateTravelHoursBetweenFlights(schedule.departureTime, schedule.arrivalTime)}</span>
+                                                    <ul class="flightstop-line"/>
+                                                </div>
+                                            </div>
+                                            <div class="column is-2 is-2-tablet is-2-mobile is-mobile-float-left">
+                                                <div class="arrival">
+                                                    <span class="date-format align-left">
+                                                        <h:outputText inputStyleClass="customflight-input-label"
+                                                                      value="#{schedule.arrivalTime}">
+                                                             <f:convertDateTime pattern="HH:mm a"/>
+                                                        </h:outputText>
+                                                    </span>
+                                                    <span class="city-format align-right">#{schedule.arrivalAirtportFK.cityCode}</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">Okinami</p>
-                                        <p><span class="title is-6"><a href="http://twitter.com/#">@twitterid</a></span>
-                                        </p>
-                                        <p class="subtitle is-6">Lead Developer</p>
+                                    <div class="column is-one-quarter is-12-mobile">
+                                        <p class="currency-format align-right is-mobile-float-none">€ #{schedule.totalPrice} </p>
+
+                                        <p:commandButton class="button" value="#{msgs['links.select']}" action="#{searchView.gotoDetailView(schedule.id)}"
+                                                         iconPos="right"
+                                                         icon="fa fa-fw fa- fa-arrow-right"
+                                                         styleClass="button select-flight-button align-right">
+                                            <f:param name="scheduleId" value="#{schedule.id}"/>
+                                        </p:commandButton>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    The Beast stumbled in the dark for it could no longer see the path. It started to fracture and weaken, trying to reshape itself into the form of metal. Even the witches would no longer lay eyes upon it, for it had become hideous and twisted.
-                                    <div class="background-icon"><span class="icon-twitter"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column is-one-third">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://source.unsplash.com/uzDLtlPY8kQ" alt="Image"/>
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-96x96">
-                                            <img src="https://cdn.discordapp.com/avatars/244932903530659841/0c924a19fcf1b5c59bc9dc1b58b61bb0.jpg?size=1024"
-                                                 alt="Image"/>
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">McSocks</p>
-                                        <p><span class="title is-6"><a href="http://twitter.com/#">@twitterid</a></span>
-                                        </p>
-                                        <p class="subtitle is-6">Developer</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    The soul of the Beast seemed lost forever. Then, by the full moon's light, a child was born; child with the unbridled soul of the Beast that would make all others pale in comparison.
-                                    <div class="background-icon"><span class="icon-facebook"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column is-one-third">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://source.unsplash.com/pe_R74hldW4" alt="Image"/>
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-96x96">
-                                            <img src="https://i.imgsafe.org/a5/a5e978ce20.jpeg" alt="Image"/>
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">The Conceptionist</p>
-                                        <p><span class="title is-6"><a href="http://twitter.com/#">@twitterid</a></span>
-                                        </p>
-                                        <p class="subtitle is-6">Developer</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam! Labore reprehenderit beatae magnam animi!
-                                    <div class="background-icon"><span class="icon-barcode"></span></div>
+                                    <c:if test="#{schedule.discountHighest > 0}">
+                                        <div class="discount-label red labeldiscount">
+                                            <span>-#{schedule.discountHighest}%</span></div>
+                                    </c:if>
                                 </div>
                             </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!--<div id="header-main">-->
-        <!--<div id="header-wrapper">-->
-        <!--<nav class="secondary-nav"></nav>-->
-        <!--<div id="logo"></div>-->
-        <!--<div id="primary-nav"></div>-->
-        <!--</div>-->
-        <!--</div>-->
+            </h:form>
+        </section>
 
 
-        <!--<h1>#{msgs['page.index.title']}</h1>-->
-        <!--<div class="container">-->
-        <!--<br/>-->
-        <!--<div class="row justify-content-center">-->
-        <!--<div class="col-12 col-md-10 col-lg-8">-->
-        <!--<h:form styleClass="card card-sm">-->
-        <!--<div class="card-body row no-gutters align-items-center">-->
-        <!--<div class="col">-->
-
-        <!--<t:input label="First name:" field="firstName" />-->
-
-        <!--<t:input label="Last name:" field="lastName" />-->
-
-
-        <!--<br/>-->
-        <!--<h:commandButton action="confirm" styleClass="btn btn-primary" value="Confirm"/>-->
-
-
-        <!--<h:inputText styleClass="form-control form-control-lg form-control-borderless"-->
-        <!--id="search" value="#{flightBean.searchString}"></h:inputText>-->
-        <!--</div>-->
-        <!--<div class="col-auto">-->
-        <!--<h:commandButton styleClass="btn btn-lg btn-primary" value="Search!"-->
-        <!--action="#{flightBean.search(flightBean.searchString)}">-->
-        <!--<f:ajax execute="search" action="output"></f:ajax>-->
-        <!--</h:commandButton>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;<h:outputText id="output" value="#{bookBean.book.title}"></h:outputText>&ndash;&gt;-->
-        <!--</h:form>-->
-        <!--&lt;!&ndash;  <h:link outcome="ingredients" styleClass="btn btn-default">#{msgs['ingredients.list']}</h:link>-->
-        <!--<h:link value="#{msgs['links.register']}" outcome="registration" styleClass="btn btn-default"/>&ndash;&gt;-->
-        <!--</div>-->
-        <!--&lt;!&ndash;end of col&ndash;&gt;-->
-        <!--</div>-->
-        <!--</div>-->
     </ui:define>
 </ui:composition>
 

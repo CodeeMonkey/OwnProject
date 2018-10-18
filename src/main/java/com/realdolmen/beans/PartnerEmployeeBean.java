@@ -1,24 +1,38 @@
 package com.realdolmen.beans;
 
 import com.realdolmen.domain.PartnerEmployeeEntity;
-import com.realdolmen.service.PartnerEmployeeServiceBean;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.io.Serializable;
 import java.util.List;
 
 @Named
-@RequestScoped
-public class PartnerEmployeeBean {
+@SessionScoped
+public class PartnerEmployeeBean implements Serializable {
 
-    @Inject
-    PartnerEmployeeServiceBean partnerEmployeeService;
+    @PersistenceContext
+    EntityManager em;
 
-    public PartnerEmployeeEntity save(PartnerEmployeeEntity partnerEmployee){ return partnerEmployeeService.save(partnerEmployee); }
-    public PartnerEmployeeEntity findById(long partnerEmployeeId){ return partnerEmployeeService.findById(partnerEmployeeId); }
-    public List<PartnerEmployeeEntity> findAll(){ return partnerEmployeeService.findAll(); }
-    public void remove(long partnerEmployeeId){ partnerEmployeeService.remove(partnerEmployeeId); }
+    //CRUDS
+    public PartnerEmployeeEntity save(PartnerEmployeeEntity employee) {
+        em.persist(employee);
+        return employee;
+    }
 
+    public PartnerEmployeeEntity findById(Long id) {
+        return em.find(PartnerEmployeeEntity.class, id);
+    }
+
+    public List<PartnerEmployeeEntity> findAll() {
+        return em.createQuery("select e from PartnerEmployeeEntity e", PartnerEmployeeEntity.class).getResultList();
+    }
+
+    public void remove(long employeeId) {
+        em.remove(em.getReference(PartnerEmployeeEntity.class, employeeId));
+    }
+    //END CRUDS
 
 }
